@@ -5,8 +5,9 @@ close all
 %A = imread('image1.jpg');
 A = imread('peppers.png');
 [M,N,O] = size(A);
-sig = 10;
+sig = 100;
 G = lpfilter('gauss',M,N,sig);
+
 % F = 1;
 % xo = 0;
 % yo = 0;
