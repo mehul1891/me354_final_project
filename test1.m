@@ -33,6 +33,7 @@ A = imread('peppers.png');
 % Analyzing the image matrix
 [M,N,O] = size(A);
 
+
 % Switching between Kernel calculation options
 switch kernel_function
     case 'ext'
