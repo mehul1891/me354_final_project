@@ -14,18 +14,20 @@
 %                        kernel
 
 % 2. plot                = 'yes' or 'no'
+% 3. draw_kernel         = 'yes' or 'no'
 
 
 %=========================================================================%
 
 
 clc
-clear
+clear all
 close all
 
 % Input options
-kernel_function = 'ext';
+kernel_function = 'int';
 plot            = 'yes';
+draw_kernel     = 'no';
 
 % Load and read images from a local directory
 A = imread('peppers.png');
@@ -36,30 +38,34 @@ A = imread('peppers.png');
 % Switching between Kernel calculation options
 switch kernel_function
     case 'ext'
-        sig = 10;
-        G = lpfilter('gauss',M,N,sig);
+        sigma = 100;
+        GF = lpfilter('gauss',M,N,sigma);
     case 'int'
+%         Preferable to work in the frequency domain directly as we do not
+%         have the physical dimensions of the image (x,y).
+
+%         Here, x,y,xo,yo are some measure of wave number and hence
+%         frequency (\omega)
         F = 1;
-        xo = 0;
-        yo = 0;
-        sig_x = 100;
-        sig_y = 100;
-        gauss2D = @(x,y) F.*exp(-((x-xo).^2./(2.*sig_x.^2)+...
-            (y-yo).^2./(2.*sig_y.^2)));
-        [X,Y] = meshgrid(linspace(1,N,N),linspace(1,M,M));
+        xo = M/2; % Mean in x
+        yo = N/2; % Mean in y
+        sigma = 100;
+        gauss2D = @(x,y) F.*exp(-((x-xo).^2 + (y-yo).^2.)...
+            /(2.*sigma.^2));
+        [X,Y] = meshgrid(1:M,1:N);
         G = gauss2D(X,Y);
-        G = fft2(G);
+        GF = G';
     otherwise
         error('Wrong "kernel_function" selected')
 end
 
-G = repmat(G,[1,1,O]);
+GF = repmat(GF,[1,1,O]);
 
 % Fourier Transform of the image
 FA = fft2(A);
 
 % Convolution in the spatial domain is product in the frequency domain
-H = FA.*G;
+H = FA.*GF;
 
 % Working back in the spatial domain
 B = real(ifft2(H));
@@ -67,21 +73,25 @@ B = real(ifft2(H));
 
 % Plotting
 switch plot
-    case 'yes'        
+    case 'yes'
         figure()
-        imagesc(A)
+        imshow(A)
         title('Original image')
 
         figure()
         imshow(B)
         title('Noisy image')
-
-        figure 
-        contourf(X,Y,G(:,:,1))
-        title('Kernel')
-        colorbar
+    
     case 'no'
         disp('No images plotted')
     otherwise
         error('Wrong "plot" option selected')
+end
+
+if (strcmp(draw_kernel,'yes')==1) && (strcmp(kernel_function,'int')==1)
+        figure 
+        contourf(X,Y,G(:,:,1))
+        title('Kernel')
+        colorbar
+else
 end
