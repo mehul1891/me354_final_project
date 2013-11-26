@@ -68,8 +68,7 @@ FA = fft2(A);
 H = FA.*GF;
 
 % Working back in the spatial domain
-B = real(H);
-%B = real(ifft2(H));
+B = real(ifft2(H));
 
 
 % Plotting
