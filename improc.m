@@ -29,7 +29,7 @@ close all
 
 % Input options
 kernel_function     = 'ext';
-plot                = 'yes';
+plot                = 'no';
 draw_kernel         = 'yes';
 boundary_condition  = 'periodic';
 sigma               = 10;
@@ -105,6 +105,7 @@ B(:,:,1) = B(:,:,1)./B_redmax;
 B(:,:,2) = B(:,:,2)./B_bluemax;
 B(:,:,3) = B(:,:,3)./B_greenmax;
 
+[C]=inv_filter(A,B);
 
 % Plotting
 switch plot
@@ -125,7 +126,7 @@ end
 
 if (strcmp(draw_kernel,'yes')==1) && (strcmp(kernel_function,'int')==1)
         figure 
-        contourf(X,Y,G(:,:,1))
+        contourf(GF(:,:,1))
         title('Kernel')
         colorbar
 else
