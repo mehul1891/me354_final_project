@@ -29,8 +29,8 @@ close all
 
 % Input options
 kernel_function     = 'ext';
-plot                = 'no';
-draw_kernel         = 'yes';
+plot                = 'yes';
+draw_kernel         = 'no';
 boundary_condition  = 'periodic';
 sigma               = 10;
 
@@ -105,8 +105,6 @@ B(:,:,1) = B(:,:,1)./B_redmax;
 B(:,:,2) = B(:,:,2)./B_bluemax;
 B(:,:,3) = B(:,:,3)./B_greenmax;
 
-[C]=inv_filter(A,B);
-
 % Plotting
 switch plot
     case 'yes'
@@ -124,7 +122,7 @@ switch plot
         error('Wrong "plot" option selected')
 end
 
-if (strcmp(draw_kernel,'yes')==1) && (strcmp(kernel_function,'int')==1)
+if (strcmp(draw_kernel,'yes')==1) 
         figure 
         contourf(GF(:,:,1))
         title('Kernel')

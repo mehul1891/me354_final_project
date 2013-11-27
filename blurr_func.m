@@ -1,6 +1,6 @@
 %=========================================================================%
 
-% FINDS THE MATRIX THAT DEFINES THE OPTICS 
+% FINDS THE FUNCTION THAT DEFINES THE OPTICS 
 
 % Developers             : David Manosalvas
 % Organization           : Stanford University
