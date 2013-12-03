@@ -18,6 +18,7 @@
 
 %=========================================================================%
 
+% Clear previous memory items
 clear all; 
 close all;
 clc;
