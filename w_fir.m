@@ -39,8 +39,9 @@ im = im2double(im);
 
 % Window size (M) [Later make this as an input]
 M = 4;
+W = -M:M;
 
-% St.D. of noise [Later make this as an input]
+% St.D. of noise                        [Later make this as an input]
 sig_n = 0.01;
 
 % St.D of the image
@@ -49,21 +50,23 @@ sig = std2(im);
 % Signal to Noise ratio (SNR)
 SNR = sig.^2/sig_n.^2;
 
-% Covariance function (r): size = [mpr+p+1,npr+p+1]
-p = M; % Need to check/play on this parameter
+% Covariance function (r): size = [2p+1,2p+1]
+p = 2;                               % Need to check/play on this parameter
 mpr = -p:p; npr = -p:p;
+
+%% CREATING h AND r0
 
 % Initializing Covariance and Gaussian PSF
 r0 = zeros(length(mpr),length(npr));
-h = zeros(length(mpr),length(npr));
+h  = zeros(length(mpr),length(npr));
 
 
 for i = -p:p
     for j = -p:p        
         r0(i+p+1,j+p+1) = 0.95^sqrt(i^2 + j^2);
 
-        % PSF [Later make this as an input] : size = [mpr+p+1,npr+p+1]
-        % Gaussian
+        % PSF (h) : size = [2p+1,2p+1] 
+        % Gaussian                      [Later make this as an input]
         alpha = 0.001; % This should be made smaller
         h(i+p+1,j+p+1) = exp(-alpha*(i^2 + j^2));
     end
@@ -71,7 +74,31 @@ end
 
 % FIR Weiner Filter kernel
 
-% Initializing R
+% Right hand side of Eqn 8.64 (r_uv)
+% r_uv = Convolution between PSF and r0
+r_uv = zeros(2*M+1,2*M+1);              % Initializing
+
+
+for k = 1:length(W)
+    for l = 1:length(W)
+        for i = 1:length(mpr)
+            for j = 1:length(npr)
+                % Creating temp variables
+                a = k-i ; b = l-j;
+                if a<=0 || a>length(mpr) || b<=0 || b>length(npr)
+                    r_uv(k,l) = r_uv(k,l);
+                else
+                    r_uv(k,l) = r_uv(k,l) + h(a,b)*r0(i,j);
+                end
+            
+            end
+         
+        end
+        
+    end
+end
+
+%% Initializing R
 % R = zeros((2*M+1)^2,(2*M+1)^2);
 % I = eye(size(R,1),size(R,2));
 
