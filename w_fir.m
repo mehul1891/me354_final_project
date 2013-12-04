@@ -51,7 +51,7 @@ sig = std2(im);
 
 % St.D. of noise                        [Later make this as an input]
 % sig_n = 0.01;
-sig_n = 0.08*sig;
+sig_n = 0.0*sig;
 
 % Signal to Noise ratio (SNR)
 SNR = sig.^2/sig_n.^2;
@@ -76,13 +76,13 @@ for i = -p:p
 
         % PSF (h) : size = [2p+1,2p+1] 
         % Gaussian                      [Later make this as an input]
-%         alpha = .01; % This should be made smaller
-%         h(i+p+1,j+p+1) = exp(-alpha*(i^2 + j^2));
+        alpha = .01; % This should be made smaller
+        h(i+p+1,j+p+1) = exp(-alpha*(i^2 + j^2));
     end
 end
 
 % To use MATLAB's inbuilt function to create the PSF
-h = fspecial('disk',p);
+% h = fspecial('disk',p);
 
 % r_uv = Convolution between PSF and r0
 r_uv = zeros(2*M+1,2*M+1);              % Initializing
@@ -218,5 +218,5 @@ imshow(im)
 title('original image')
 
 figure(2)
-imshow(im_sharp)
+imshow(im_sharp./max(im_sharp(:)))
 title('Sharpened Image')
