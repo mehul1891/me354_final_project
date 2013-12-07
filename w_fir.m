@@ -4,7 +4,7 @@
 
 % Developers             : Mehul Oswal
 % Organization           : Stanford University
-% Objective              : Perform basic image filtering (FIR Wiener)
+% Objective              : Perform image filtering (FIR Wiener)
 % Contact information    : moswal@stanford.edu
 
 % Input options
@@ -18,47 +18,105 @@
 
 %=========================================================================%
 
-% Clear previous memory items
+%% Fresh Start
 clear all; 
 close all;
 clc;
 
-disp('Extracting image and initializing variables')
+%% Input Options
+read_image = 'global'; % Reading the good image from the local storage
+blur_type  = 'disk';% Can be 'gaussian','disk', 'motion',etc
+plot_original = 'no'; % Can be 'yes' or 'no'
+plot_blurred  = 'yes'; % Can be 'yes' or 'no'
+
+%% Extracting image and introducing noise into it
+disp('Introducing noise in the image')
 tic;
 
-% Grab the BLURRED image from the respective directory
-im = imread...
-    ('/Users/mehuloswal/me354_final_project/image_cereals/image2.jpg');
+switch read_image
+    case 'local'
+        I = imread...
+        ('/Users/mehuloswal/me354_final_project/image_cereals/image1.jpg');
+    case 'global'
+        I = imread('peppers.png');
+    case 'other'
+        % Ask for the path of the image on the local system
+        alt_path = input('Please specify alternate path of the image in single quotes:');
+        I = imread(alt_path);
+    otherwise
+        error('Wrong "read_image" choice specified')
+end
 
-% Convert the image into a gray scale
-im = rgb2gray(im);
 
-% Scale the image by intensities [0,1]
-im = mat2gray(im);
+% Prepare the image: 
+I = mat2gray(rgb2gray(im2double(I)));
+if strcmp(plot_original,'yes')
+    figure, imshow(I);
+    title('Original Image');
+else
+end
 
-% Convert the image to double
-im = im2double(im);
+
+switch blur_type
+    case 'motion'
+%       LEN = input('LEN=');
+%       THETA = input('THETA=');
+        LEN = 51;
+        THETA = 11;
+        PSF = fspecial('motion', LEN, THETA);
+        blurred = imfilter(I, PSF, 'conv', 'circular');
+    case 'gaussian'
+%       ROW = input('No. of Rows=');
+%       COL = input('No. of Cols=');        
+        RADIUS = 3;
+        ROW = RADIUS;
+        COL = RADIUS;
+        PSF = fspecial('gaussian', ROW, COL);
+        blurred = imfilter(I, PSF, 'conv', 'circular');
+    case 'disk'
+%       RADIUS = input('Radius of the disk');
+        RADIUS = 2;
+        PSF = fspecial('disk', RADIUS);
+        blurred = imfilter(I, PSF, 'conv', 'circular');
+    otherwise
+        error('Blur type specified not yet set up in the code')
+end
+
+% Additive noise
+mean_noise = 0;
+var_noise = 0.0001;
+im = imnoise(blurred, 'gaussian', ...
+                mean_noise, var_noise);
+            
+if strcmp(plot_blurred,'yes')
+    figure, imshow(im)
+    title('Simulate Blur and Noise')
+else
+end
+toc;
+
+%%
+disp('Extracting image and initializing variables')
+tic;
 
 % Image size
 [m,n] = size(im);
 
-% Window size (M)                       [Later make this as an input]
-M = 4;
-W = -M:M;
+% Window (W)                            [Later make this as an input]
+M = 4; W = -M:M;
 
 % St.D of the image
 sig = std2(im);
 
 % St.D. of noise                        [Later make this as an input]
-% sig_n = 0.01;
-sig_n = 0.0*sig;
+sig_n = sqrt(var_noise);
 
 % Signal to Noise ratio (SNR)
 SNR = sig.^2/sig_n.^2;
 
 % Covariance function (r): size = [2p+1,2p+1]
-p = 3;                               % Need to check/play on this parameter
-mpr = -p:p; npr = -p:p;
+p = RADIUS;                         % Need to check/play on this parameter
+mpr = -p:p; npr = -p:p;             % Square Matrix 
 
 disp('Done')
 toc;
@@ -66,6 +124,7 @@ toc;
 %% Evaluating the RIGHT HAND SIDE OF Eqn. 8.64
 disp('Evaluating the RIGHT HAND SIDE OF Eqn. 8.64')
 tic;
+
 % Creating h (PSF) AND r0 (Covariance)
 r0 = zeros(length(mpr),length(npr));
 h  = zeros(length(mpr),length(npr));
@@ -76,13 +135,16 @@ for i = -p:p
 
         % PSF (h) : size = [2p+1,2p+1] 
         % Gaussian                      [Later make this as an input]
-        alpha = .01; % This should be made smaller
-        h(i+p+1,j+p+1) = exp(-alpha*(i^2 + j^2));
+%         alpha = .01; % This should be made smaller
+%         h(i+p+1,j+p+1) = exp(-alpha*(i^2 + j^2));
     end
 end
 
 % To use MATLAB's inbuilt function to create the PSF
-% h = fspecial('disk',p);
+h = fspecial('disk',p);
+
+% Normalizing PSF & Covariance to have area under surface = 1;
+h = h./sum(h(:));r0 = r0./sum(r0(:));
 
 % r_uv = Convolution between PSF and r0
 r_uv = zeros(2*M+1,2*M+1);              % Initializing
@@ -211,12 +273,22 @@ end
 disp('Done')
 toc;
 
-%% Sharpedned image
+%% Sharpened image
 
-figure(1)
+figure()
 imshow(im)
 title('original image')
 
-figure(2)
+figure()
 imshow(im_sharp./max(im_sharp(:)))
 title('Sharpened Image')
+
+%%
+%===================USING MATLAB'S IFR WIENER=============================%
+
+estimated_nsr = noise_var / var(I(:));
+wnr3 = deconvwnr(im, PSF, estimated_nsr);
+figure, imshow(wnr3)
+title('Restoration of Blurred, Noisy Image Using MATLAB inbuilt function');
+
+%===================USING MATLAB'S IFR WIENER=============================%

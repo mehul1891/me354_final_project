@@ -30,7 +30,7 @@ close all
 % Input options
 kernel_function     = 'ext';
 plot                = 'yes';
-draw_kernel         = 'no';
+draw_kernel         = 'yes';
 boundary_condition  = 'periodic';
 sigma               = 10;
 
