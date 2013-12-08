@@ -32,7 +32,7 @@ kernel_function     = 'ext';
 plot                = 'yes';
 draw_kernel         = 'no';
 boundary_condition  = 'periodic';
-sigma               = 10;
+sigma               = 5;
 
 
 % Load and read images from a local directory
@@ -76,6 +76,7 @@ switch boundary_condition
         clear GF
         GF = GFpad;
     case 'none'
+        GF = fft2(GF);
         
 otherwise
         error('Wrong "bondary_condition" selected')
@@ -122,10 +123,16 @@ switch plot
         error('Wrong "plot" option selected')
 end
 
-if (strcmp(draw_kernel,'yes')==1) 
-        figure 
-        contourf(GF(:,:,1))
-        title('Kernel')
-        colorbar
-else
-end
+% if (strcmp(draw_kernel,'yes')==1) 
+%         figure 
+%         contourf(GF(:,:,1))
+%         title('Kernel')
+%         colorbar
+%         
+%         figure 
+%         contourf(ifft2(GF(:,:,1)))
+%         title('Real Kernel')
+%         colorbar
+%         
+% else
+% end

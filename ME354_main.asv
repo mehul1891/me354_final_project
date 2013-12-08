@@ -1,0 +1,71 @@
+%=========================================================================%
+
+% IMAGE PROCESSING SCRIPT
+
+% Developers             : David Manosalvas & Mehul Oswal
+% Organization           : Stanford University
+% Objective              : The main code used to obtain the PSF using 
+%                          various filters and compares them to the base
+%                          case.
+% Contact information    : deman@stanford.edu
+%                          moswal@stanford.edu
+
+% Input options
+
+% 1. PSF_function       = 'gauss' uses a gaussian approximation 
+%                       = 'disk' uses a disk approximation
+%
+% 2. plot               = 'yes' or 'no'
+% 3. draw_kernel        = 'yes' or 'no'
+
+
+%=========================================================================%
+
+clc
+close all
+clear all
+
+% Input options
+PSF_function        = 'gaussian';
+sigma               = 1;  
+plot                = 'yes';
+draw_kernel         = 'yes';
+ClearIm             = 'DSC_0517.jpg'; % 'peppers.png';            % Name of the clear image
+BlurredIm           = 'DSC_0518.jpg'; % 'peppers_blur.png';      % Name of the blurred image
+noise               = 10^(-4);                   % Noise value (experience)
+
+
+
+
+% Load and read images from a local directory
+% Gets the images and calculates pre-processes them
+A = imread(ClearIm);
+A = rgb2gray(A);
+FA = fft2(A);
+
+% B = imread(BlurredIm);
+% B = rgb2gray(B);
+% FB = fft2(B);
+
+
+% Determines the PSF that will be the initial guess for the filters
+[M,N] = size(A);
+H = fspecial(PSF_function,[M,N],sigma);
+FH = abs(fft2(H));
+
+
+FB = FH.*FA;
+B = ifft2(FB);
+B = real(B)./max(max(abs(B)));
+
+C = blurr_func(A,B);
+%surf(real(FH))
+imshow(A)
+figure
+imshow(B)
+%grid off
+
+figure
+surf(H)
+figure
+surf(C)
