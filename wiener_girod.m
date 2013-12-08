@@ -24,13 +24,13 @@ close all;
 clc;
 
 %% Input Options
-read_image    = 'global'; % Reading the good image from the local storage
-blur_type     = 'gaussian';% Can be 'gaussian','disk', 'motion',etc
+read_image    = 'local'; % Reading the good image from the local storage
+blur_type     = 'other';% Can be 'gaussian','disk', 'motion',etc
 plot_original = 'no'; % Can be 'yes' or 'no'
 plot_blurred  = 'yes'; % Can be 'yes' or 'no'
-add_noise     = 'yes'; % Can be 'yes' or 'no''
-edge_det      = 'yes'; % Can be 'yes' or 'no'
-var_noise     = 0.001; % on a scale of 0-1
+add_noise     = 'no'; % Can be 'yes' or 'no''
+edge_det      = 'no'; % Can be 'yes' or 'no'
+var_noise     = 0.000001; % on a scale of 0-1
 
 %% Extracting image and introducing noise into it
 disp('Introducing noise in the image')
@@ -39,7 +39,9 @@ tic;
 switch read_image
     case 'local'
         I = imread...
-        ('/Users/mehuloswal/me354_final_project/image_cereals/image1.jpg');
+            ('/Users/mehuloswal/Documents/Dropbox/ME354/presentation/BlurredImageUsed.jpg');
+%         ('/Users/mehuloswal/me354_final_project/image_cereals/image1.jpg');
+        
     case 'global'
         I = imread('peppers.png');
     case 'other'
@@ -51,6 +53,7 @@ switch read_image
 end
 
 
+
 % Prepare the image: 
 I = mat2gray(rgb2gray(im2double(I)));
 if strcmp(plot_original,'yes')
@@ -59,6 +62,7 @@ if strcmp(plot_original,'yes')
 else
 end
 
+%%
 
 switch blur_type
     case 'motion'
@@ -78,9 +82,20 @@ switch blur_type
         blurred = imfilter(I, PSF, 'conv', 'circular');
     case 'disk'
 %       RADIUS = input('Radius of the disk');
-        RADIUS = 2;
+        RADIUS = 5;
         PSF = fspecial('disk', RADIUS);
         blurred = imfilter(I, PSF, 'conv', 'circular');
+    case 'other'
+        blurred = I;
+%         LEN = 51;
+%         THETA = 11;
+%         PSF = fspecial('motion', LEN, THETA);
+%         RADIUS = 1;
+%         PSF = fspecial('disk', RADIUS);
+        RADIUS = 5;
+        ROW = RADIUS;
+        COL = RADIUS;
+        PSF = fspecial('gaussian', ROW, COL);
     otherwise
         error('Blur type specified not yet set up in the code')
 end
@@ -159,14 +174,15 @@ switch edge_det
     case 'yes'
         threshold = var(im(:));
         image_edge = edge(im,threshold);
+        im_sh_edge = im_sharp+image_edge;
+        figure, imshow(im_sh_edge);
     otherwise
         image_edge = zeros(size(im));
 end
 
-im_sh_edge = im_sharp+image_edge;
-
 %% Finally recovered image
-figure, imshow(im_sh_edge);
+
+
 
 
 
