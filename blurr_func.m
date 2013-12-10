@@ -18,7 +18,7 @@
 %          convolved with the image to generate the blurry picture
 
 %=========================================================================%
-function [FC] = blurr_func(A,B)
+function [C_real] = blurr_func(A,B)
 
 % Takes only the red part of the picture and its based on the assumption
 % that the optics function will affect all the layers equaly
@@ -30,10 +30,16 @@ FB = fft2(y);
 
 % Linear decombolution
 FC = FB./FA;
+C = ifft2(FC);
+
+[k1,k2] = size(C);
+C_center = C(:,floor(k2/2));
+figure
+plot(C_center)
 
 %C = ifft2(FC); % The periodic BC based combolution function
-%[k1,k2] = size(C);
-%C_real = abs(fftshift(ifft2(FC)));
+
+C_real = abs(fftshift(ifft2(FC)));
 
 % Obtaines the DC centered signal
 % C_real = C([end+1-floor(k1/2):end,1:ceil(k1/2)], ...

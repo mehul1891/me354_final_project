@@ -27,12 +27,12 @@ clear all
 
 % Input options
 PSF_function        = 'gaussian';
-sigma               = 1;  
+sigma               = 20;  
 plot                = 'yes';
 draw_kernel         = 'yes';
-ClearIm             = 'DSC_0517.jpg'; %'peppers.png';            % Name of the clear image
-BlurredIm           = 'DSC_0518.jpg'; %'peppers_blur.png';      % Name of the blurred image
-noise               = 10^(-4);                   % Noise value (experience)
+ClearIm             = 'peppers.png';            % Name of the clear image
+%BlurredIm           = %'peppers_blur.png';      % Name of the blurred image
+noise               = 10^(-10);                   % Noise value (experience)
 
 
 
@@ -44,17 +44,17 @@ A = rgb2gray(At);
 %A = resize(A,1000);
 FA = fft2(A);
 
-Bt = imread(BlurredIm);
-B = rgb2gray(Bt);
-%B = resize(B,1000);
-FB = fft2(B);
+% Bt = imread(BlurredIm);
+% B = rgb2gray(Bt);
+% %B = resize(B,1000);
+% FB = fft2(B);
 
-FH = blurr_func(A,B);
+%FH = blurr_func(A,B);
 
 % Determines the PSF that will be the initial guess for the filters
-% [M,N] = size(A);
-% H = fspecial(PSF_function,[M,N],sigma);
-% FH = abs(fft2(H));
+[M,N] = size(A);
+H = fspecial(PSF_function,[M,N],sigma);
+FH = abs(fft2(H));
 
 %FH = fft2(C);
 
@@ -63,17 +63,25 @@ FB2 = FH.*FA;
 B2 = ifft2(FB2);
 B2 = real(B2)./max(max(abs(B2)));
 
+noise_sig = sqrt(noise)*randn(M,N);
+B3 = B2+noise_sig;
 
+
+[C1] = blurr_func(A,B2);
+[C2] = blurr_func(A,B3);
 %surf(real(FH))
 figure 
 imshow(A)
-figure
-imshow(B)
+%figure
+%imshow(B)
 figure
 imshow(B2)
 %grid off
 
-% figure
-% surf(H,'EdgeColor','none')
 figure
-surf(real(ifft2(FH)),'EdgeColor','none')
+surf(C1,'EdgeColor','none')
+
+figure
+surf(C2,'EdgeColor','none')
+% figure
+% surf(real(ifft2(FH)),'EdgeColor','none')
