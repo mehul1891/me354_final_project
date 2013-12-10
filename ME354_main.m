@@ -27,12 +27,12 @@ clear all
 
 % Input options
 PSF_function        = 'gaussian';
-sigma               = 20;  
+sigma               = 5;  
 plot                = 'yes';
 draw_kernel         = 'yes';
-ClearIm             = 'peppers.png';            % Name of the clear image
+ClearIm             = 'VKvortex.jpg';            % Name of the clear image
 %BlurredIm           = %'peppers_blur.png';      % Name of the blurred image
-noise               = 10^(-10);                   % Noise value (experience)
+noise               = 10^(-8);                   % Noise value (experience)
 
 
 
@@ -81,7 +81,10 @@ imshow(B2)
 figure
 surf(C1,'EdgeColor','none')
 
+
 figure
 surf(C2,'EdgeColor','none')
+
+imwrite(B3,'VKvortex_blurred.jpg')
 % figure
 % surf(real(ifft2(FH)),'EdgeColor','none')

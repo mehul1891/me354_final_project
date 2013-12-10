@@ -30,9 +30,9 @@ PSF_function        = 'gaussian';
 sigma               = 5;  
 plot                = 'yes';
 draw_kernel         = 'yes';
-ClearIm             = 'peppers.png';            % Name of the clear image
+ClearIm             = 'VKvortex.jpg';            % Name of the clear image
 %BlurredIm           = %'peppers_blur.png';      % Name of the blurred image
-noise               = 10^(-4);                   % Noise value (experience)
+noise               = 10^(-8);                   % Noise value (experience)
 
 
 
@@ -67,7 +67,8 @@ noise_sig = sqrt(noise)*randn(M,N);
 B3 = B2+noise_sig;
 
 
-
+[C1] = blurr_func(A,B2);
+[C2] = blurr_func(A,B3);
 %surf(real(FH))
 figure 
 imshow(A)
@@ -77,7 +78,13 @@ figure
 imshow(B2)
 %grid off
 
-% figure
-% surf(H,'EdgeColor','none')
+figure
+surf(C1,'EdgeColor','none')
+
+
+figure
+surf(C2,'EdgeColor','none')
+
+%imwrite(B3,'Blurred_cesna.jpg')
 % figure
 % surf(real(ifft2(FH)),'EdgeColor','none')
