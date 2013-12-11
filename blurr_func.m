@@ -30,13 +30,22 @@ FB = fft2(y);
 
 % Linear decombolution
 FC = FB./FA;
+C = ifft2(FC);
 
-C = ifft2(FC); % The periodic BC based combolution function
-[k1,k2] = size(C);
 
+
+%C = ifft2(FC); % The periodic BC based combolution function
+
+C_real = abs(fftshift(ifft2(FC)));
+[k1,k2] = size(C_real);
+C_center = C_real(:,floor(k2/2));
+
+figure
+plot(C_center)
 % Obtaines the DC centered signal
-C_real = C([end+1-floor(k1/2):end,1:ceil(k1/2)], ...
-        [end+1-floor(k2/2):end,1:ceil(k2/2)]);
+% C_real = C([end+1-floor(k1/2):end,1:ceil(k1/2)], ...
+%         [end+1-floor(k2/2):end,1:ceil(k2/2)]);
+
 
 
 
