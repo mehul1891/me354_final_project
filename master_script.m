@@ -101,6 +101,7 @@ end
 % 3     : Motion PSF
 
 % Additional factors can be set to 1 for consistency amongst blur types
+% These factors are introduced because PSF_size = 1% was not significatn
 gauss_size_factor    = 2;
 disk_size_factor     = 1;
 motion_size_factor   = 2;
@@ -229,17 +230,111 @@ for i = 1:nimages
     end
 end
 
-%% And implementing different filters 
-
+%% And testing different filters 
+% For all test images w or w/o noise
 % Using im_filter.m script created for this
-v               = blurred_32;
-filter_type     = 'wiener';
+
+
+
+% Index read guide
+% u_221: 2nd image, disk blur, filter index
+
+% Filter index
+    % 1: inverse
+    % 2: wiener
+    % 3: geo_mean
+    % 4: least squares
+    % 5: ED+filt
+    
+
+% For Disk type blur in Lena
+v               = blurred_22;
 PSF_type        = 'disk';
+filter_type     = 'wiener';
+PSF_dim         = PSF_size(2);
+factor          = 'global';
+[u_222,G_222] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+figure, imshow(u_222)
+title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
+
+v               = blurred_22;
+PSF_type        = 'disk';
+filter_type     = 'geo_mean';
+PSF_dim         = PSF_size(2);
+factor          = 'global';
+[u_223,G_223] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+figure, imshow(u_223)
+title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
+
+% v               = blurred_22;
+% PSF_type        = 'disk';
+% filter_type     = 'ED+filt';
+% PSF_dim         = PSF_size(2);
+% factor          = 'global';
+% [u_225,G_225] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(u_225)
+% title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
+
+clear v
+
+% For Gaussian blur in Cameraman
+v               = blurred_31;
+PSF_type        = 'gaussian';
+filter_type     = 'wiener';
 PSF_dim         = PSF_size(3);
 factor          = 'global';
-[u,G] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+[u_312,G_312] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+figure, imshow(u_312) 
+title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 
-figure, imshow(v)
-figure, imshow(u)
-       
+v               = blurred_31;
+PSF_type        = 'gaussian';
+filter_type     = 'geo_mean';
+PSF_dim         = PSF_size(3);
+factor          = 'global';
+[u_313,G_313] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+figure, imshow(u_313)
+title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
+
+% v               = blurred_31;
+% PSF_type        = 'gaussian';
+% filter_type     = 'ED+filt';
+% PSF_dim         = PSF_size(3);
+% factor          = 'global';
+% [u_315,G_315] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(u_315)
+% title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
+
+clear v
+
+% For motion blur in the sphere
+v               = blurred_43;
+PSF_type        = 'motion';
+filter_type     = 'wiener';
+PSF_dim         = PSF_size(4);
+factor          = 'global';
+[u_432,G_432] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+figure, imshow(u_432)
+title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
+v               = blurred_43;
+PSF_type        = 'motion';
+filter_type     = 'geo_mean';
+PSF_dim         = PSF_size(4);
+factor          = 'global';
+[u_433,G_433] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+figure, imshow(u_433) 
+title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
+
+% v               = blurred_43;
+% PSF_type        = 'motion';
+% filter_type     = 'ED+filt';
+% PSF_dim         = PSF_size(4);
+% factor          = 'global';
+% [u_435,G_435] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(u_435)
+% title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
+
+clear v
+
+%%
 

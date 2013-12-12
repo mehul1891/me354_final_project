@@ -67,10 +67,12 @@ V = fft2(v);
 
 switch filter_type
     case 'inverse'
+    
     case 'wiener'
         G = conj(H)./(abs(H).^2 + 1/SNR);
         U = G.*V;
         u = ifft2(U);
+    
     case 'geo_mean'
         H_inv = zeros(size(H));
         for i=1:size(H,1)
@@ -86,7 +88,9 @@ switch filter_type
         G = (H_inv.^s).*(conj(H)./(abs(H).^2 + 1/SNR)).^(1-s);
         U = G.*V;
         u = ifft2(U);
+    
     case 'least_squares'
+    
     case 'ED+filt'
         
         % This is just a trial method of sharpening. Want to see what edge 
@@ -94,6 +98,7 @@ switch filter_type
         
         disp('Enter the type of regular filter to use for this in quotes')
         gen_filt = input('');
+        
         switch gen_filt
             case 'inverse'
             case 'wiener'
@@ -119,11 +124,13 @@ switch filter_type
             otherwise
             error('Check type of filter selected')
         end
+        
         % threshold = var(im(:));
         image_edge = edge(v);
         u_edge = u_filt+image_edge;
         G = fft2(u_edge)./V;
         u = u_edge;
+    
     otherwise
         error('Wrong "filter_type" specified')
 end
