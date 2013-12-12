@@ -30,13 +30,26 @@
 %% Clear previous cache
 clear all; close all; clc;
 
+global gauss_size_factor disk_size_factor motion_size_factor
+
+%% User Specified inputs
+
+% Additive noise parameters
+add_noise           = 'yes';
+mean_n              =  0   ;
+var_n               = 1e-5 ;
+
+
 %% Images that this code is trained and tested with
+
+nimages = 4;
 
 % Test image 1: peppers.png
 im1 = imread('peppers.png');
 
 % Test image 2: lina.jpg
-im2 = imread('lena.png');
+% Copyright of the PlayBoy magazine. Free redistribution cautioned.
+im2 = imread('lena.tiff'); 
 
 % Test image 3: cameraman.tif
 im3 = imread('cameraman.tif');
@@ -44,4 +57,189 @@ im3 = imread('cameraman.tif');
 % Test image 4: ssphere.jpg
 im4 = imread('ssphere.jpg');
 
+%% Make the images gray scale (reduces computational workload and within
+% scope of this project). Also intensities are normalized to between [0,1]
+
+for i = 1:nimages
+    if nimages > 4
+        error(...
+        'no. of images must be checked again. If not, comment this out')
+    else
+        switch i
+            case 1                
+                Im1 = mat2gray(rgb2gray(im2double(im1)));
+                im_size1 = size(Im1);
+                lower_dimension(1) = min(im_size1);
+            case 2                
+                Im2 = mat2gray(rgb2gray(im2double(im2)));
+                im_size2 = size(Im2);
+                lower_dimension(2) = min(im_size2);
+            case 3                
+                Im3 = mat2gray(im2double(im3));
+                im_size3 = size(Im3);
+                lower_dimension(3) = min(im_size3);
+            case 4                
+                Im4 = mat2gray(im2double(im4));
+                im_size4 = size(Im4);
+                lower_dimension(4) = min(im_size4);
+            otherwise
+                error(...
+            'User needs to intervene here in converting images gray scale')
+        end
+    end
+end
+%% Size of the PSF as a percentage of the lower dimension
+PSF_factor = 0.01; % 4% of the lower dimension
+for i = 1:nimages
+    PSF_size(i) = ceil(PSF_factor*lower_dimension(i));
+end
+
+%% Now that we have the blur sizes, lets get the blur PSF + noise set up
+
+% 1     : Gaussian PSF
+% 2     : Disk PSF
+% 3     : Motion PSF
+
+% Additional factors can be set to 1 for consistency amongst blur types
+gauss_size_factor    = 2;
+disk_size_factor     = 1;
+motion_size_factor   = 2;
+
+for i = 1:nimages
+    if nimages > 4
+        error(...
+        'no. of images must be checked again. If not, comment this out')
+    else
+        switch i
+            case 1
+                PSF_11 = fspecial('gaussian', ...
+                    gauss_size_factor*PSF_size(i),...
+                    gauss_size_factor*PSF_size(i));
+                blurred_11 = imfilter(Im1, PSF_11, 'conv', 'circular');
+                
+                PSF_12 = fspecial('disk', disk_size_factor*PSF_size(i));
+                blurred_12 = imfilter(Im1, PSF_12, 'conv', 'circular');
+                
+                PSF_13 = fspecial('motion', ...
+                    motion_size_factor*PSF_size(i),...
+                    motion_size_factor*PSF_size(i));
+                blurred_13 = imfilter(Im1, PSF_13, 'conv', 'circular');
+                
+                switch add_noise
+                    case 'yes'
+                        blurred_11 = imnoise(blurred_11, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_12 = imnoise(blurred_12, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_13 = imnoise(blurred_13, 'gaussian', ...
+                        mean_n, var_n);
+                    case 'no'
+                        disp('Train images only blurred, no noise added')
+                    otherwise
+                        error('Wrong "add_noise" input choice')
+                end
+            case 2
+                PSF_21 = fspecial('gaussian', ...
+                    gauss_size_factor*PSF_size(i), ...
+                    gauss_size_factor*PSF_size(i));
+                blurred_21 = imfilter(Im2, PSF_21, 'conv', 'circular');
+                
+                PSF_22 = fspecial('disk', disk_size_factor*PSF_size(i));
+                blurred_22 = imfilter(Im2, PSF_22, 'conv', 'circular');
+                
+                PSF_23 = fspecial('motion', ...
+                    motion_size_factor*PSF_size(i), ...
+                    motion_size_factor*PSF_size(i));
+                blurred_23 = imfilter(Im2, PSF_23, 'conv', 'circular');
+                
+                switch add_noise
+                    case 'yes'
+                        blurred_21 = imnoise(blurred_21, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_22 = imnoise(blurred_22, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_23 = imnoise(blurred_23, 'gaussian', ...
+                        mean_n, var_n);
+                    case 'no'
+                        disp('Train images only blurred, no noise added')
+                    otherwise
+                        error('Wrong "add_noise" input choice')
+                end
+                
+            case 3
+                PSF_31 = fspecial('gaussian', ...
+                    gauss_size_factor*PSF_size(i), ...
+                    gauss_size_factor*PSF_size(i));
+                blurred_31 = imfilter(Im3, PSF_31, 'conv', 'circular');
+                
+                PSF_32 = fspecial('disk', disk_size_factor*PSF_size(i));
+                blurred_32 = imfilter(Im3, PSF_32, 'conv', 'circular');
+                
+                PSF_33 = fspecial('motion', ...
+                    motion_size_factor*PSF_size(i), ...
+                    motion_size_factor*PSF_size(i));
+                blurred_33 = imfilter(Im3, PSF_33, 'conv', 'circular'); 
+                
+                switch add_noise
+                    case 'yes'
+                        blurred_31 = imnoise(blurred_31, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_32 = imnoise(blurred_32, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_33 = imnoise(blurred_33, 'gaussian', ...
+                        mean_n, var_n);
+                    case 'no'
+                        disp('Train images only blurred, no noise added')
+                    otherwise
+                        error('Wrong "add_noise" input choice')
+                end
+                
+            case 4
+                PSF_41 = fspecial('gaussian', ...
+                    gauss_size_factor*PSF_size(i), ...
+                    gauss_size_factor*PSF_size(i));
+                blurred_41 = imfilter(Im4, PSF_41, 'conv', 'circular');
+                
+                PSF_42 = fspecial('disk', disk_size_factor*PSF_size(i));
+                blurred_42 = imfilter(Im4, PSF_42, 'conv', 'circular');
+                
+                PSF_43 = fspecial('motion', ...
+                    motion_size_factor*PSF_size(i), ...
+                    motion_size_factor*PSF_size(i));
+                blurred_43 = imfilter(Im4, PSF_43, 'conv', 'circular'); 
+                
+                switch add_noise
+                    case 'yes'
+                        blurred_41 = imnoise(blurred_41, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_42 = imnoise(blurred_42, 'gaussian', ...
+                        mean_n, var_n);
+                        blurred_43 = imnoise(blurred_43, 'gaussian', ...
+                        mean_n, var_n);
+                    case 'no'
+                        disp('Train images only blurred, no noise added')
+                    otherwise
+                        error('Wrong "add_noise" input choice')
+                end
+                
+            otherwise
+                error(...
+            'User needs to intervene here in setting up image PSFs')
+        end
+    end
+end
+
+%% And implementing different filters 
+
+% Using im_filter.m script created for this
+v               = blurred_32;
+filter_type     = 'wiener';
+PSF_type        = 'disk';
+PSF_dim         = PSF_size(3);
+factor          = 'global';
+[u,G] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+
+figure, imshow(v)
+figure, imshow(u)
+       
 
