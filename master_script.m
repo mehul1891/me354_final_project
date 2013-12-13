@@ -227,8 +227,3 @@ for i = 1:nimages
         end
     end
 end
-
-%% And testing different filters 
-% For all test images w or w/o noise
-% Using im_filter.m script created for this
-
