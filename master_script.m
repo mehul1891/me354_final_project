@@ -283,7 +283,7 @@ clear v
 % For Gaussian blur in Cameraman
 v               = blurred_31;
 PSF_type        = 'gaussian';
-filter_type     = 'wiener';
+filter_type     = 'pseudo_inverse';
 PSF_dim         = PSF_size(3);
 factor          = 'global';
 [u_312,G_312] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
@@ -351,9 +351,6 @@ legend('Real', [filter_type ' filter'])
 % factor          = 'global';
 % [u_435,G_435] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
 % figure, imshow(u_435)
-% title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
-
-
-
-%%
+% title(['Sphere blurred by ', PSF_type ' image recovered
+% using',filter_type])
 
