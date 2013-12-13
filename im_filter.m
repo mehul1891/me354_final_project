@@ -75,7 +75,7 @@ switch filter_type
         [xi,yj] = size(H);
         for i = 1:xi
             for j = 1:yj
-                if H(i,j) <= 10^(-4)
+                if H(i,j) <= 10^(-1)
                     H(i,j) = inf;
                 end
             end
@@ -150,4 +150,7 @@ switch filter_type
     otherwise
         error('Wrong "filter_type" specified')
 end
+
+% Normalizes the cleared image
+u = u./max(max(u));
 end

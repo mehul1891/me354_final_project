@@ -104,7 +104,7 @@ end
 % These factors are introduced because PSF_size = 1% was not significatn
 gauss_size_factor    = 2;
 disk_size_factor     = 1;
-motion_size_factor   = 2;
+motion_size_factor   = 5;
 
 for i = 1:nimages
     if nimages > 4
@@ -248,23 +248,26 @@ end
     
 
 % For Disk type blur in Lena
-v               = blurred_22;
-PSF_type        = 'disk';
-filter_type     = 'wiener';
-PSF_dim         = PSF_size(2);
-factor          = 'global';
-[u_222,G_222] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
-figure, imshow(u_222)
-title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
-
-v               = blurred_22;
-PSF_type        = 'disk';
-filter_type     = 'geo_mean';
-PSF_dim         = PSF_size(2);
-factor          = 'global';
-[u_223,G_223] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
-figure, imshow(u_223)
-title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
+% v               = blurred_22;
+% PSF_type        = 'disk';
+% filter_type     = 'pseudo_inverse';
+% PSF_dim         = PSF_size(2);
+% factor          = 'global';
+% [u_222,G_222] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(u_222)
+% title(['Lena blurred by ', PSF_type ' image recovered using ',filter_type])
+% % 
+% 
+% 
+% 
+% v               = blurred_22;
+% PSF_type        = 'disk';
+% filter_type     = 'geo_mean';
+% PSF_dim         = PSF_size(2);
+% factor          = 'global';
+% [u_223,G_223] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(u_223)
+% title(['Lena blurred by ', PSF_type ' image recovered using ',filter_type])
 
 % v               = blurred_22;
 % PSF_type        = 'disk';
@@ -285,16 +288,25 @@ PSF_dim         = PSF_size(3);
 factor          = 'global';
 [u_312,G_312] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
 figure, imshow(u_312) 
-title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
+title(['Cameraman blurred by ', PSF_type ' image recovered using ',filter_type])
 
-v               = blurred_31;
-PSF_type        = 'gaussian';
-filter_type     = 'geo_mean';
-PSF_dim         = PSF_size(3);
-factor          = 'global';
-[u_313,G_313] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
-figure, imshow(u_313)
-title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
+% Plots the 2D projection of the kernel
+figure
+[g_312] = kernel_filter_2D_projection(G_312);
+title(['Kernel obtained from ',filter_type])
+xlabel('pixels')
+ylabel('Magnitude')
+
+
+
+% v               = blurred_31;
+% PSF_type        = 'gaussian';
+% filter_type     = 'inverse';
+% PSF_dim         = PSF_size(3);
+% factor          = 'global';
+% [u_313,G_313] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(u_313)
+% title(['Cameraman blurred by ', PSF_type ' image recovered using ',filter_type])
 
 % v               = blurred_31;
 % PSF_type        = 'gaussian';
@@ -305,25 +317,35 @@ title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 % figure, imshow(u_315)
 % title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 
-clear v
+% clear v
+% 
+% % For motion blur in the sphere
+% v               = blurred_43;
+% PSF_type        = 'motion';
+% filter_type     = 'pseudo_inverse';
+% PSF_dim         = PSF_size(4);
+% factor          = 'global';
+% [u_432,G_432] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(v)
+% figure, imshow(u_432)
+% title(['Sphere blurred by ', PSF_type ' image recovered using ',filter_type])
+% 
+% % Plots the 2D projection of the kernel
+% figure
+% [g_432] = kernel_2D_projection(G_432);
+% title(['Kernel obtained from ',filter_type])
+% xlabel('pixels')
+% ylabel('Magnitude')
 
-% For motion blur in the sphere
-v               = blurred_43;
-PSF_type        = 'motion';
-filter_type     = 'wiener';
-PSF_dim         = PSF_size(4);
-factor          = 'global';
-[u_432,G_432] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
-figure, imshow(u_432)
-title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
-v               = blurred_43;
-PSF_type        = 'motion';
-filter_type     = 'geo_mean';
-PSF_dim         = PSF_size(4);
-factor          = 'global';
-[u_433,G_433] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
-figure, imshow(u_433) 
-title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
+
+% v               = blurred_43;
+% PSF_type        = 'motion';
+% filter_type     = 'inverse';
+% PSF_dim         = PSF_size(4);
+% factor          = 'global';
+% [u_433,G_433] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+% figure, imshow(u_433) 
+% title(['Sphere blurred by ', PSF_type ' image recovered using ',filter_type])
 
 % v               = blurred_43;
 % PSF_type        = 'motion';
@@ -334,7 +356,7 @@ title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
 % figure, imshow(u_435)
 % title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
 
-clear v
+
 
 %%
 
