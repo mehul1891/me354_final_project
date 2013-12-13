@@ -48,7 +48,23 @@ V = fft2(v);
 
 switch filter_type
     case 'inverse'
-    
+        G = 1./H;
+        U = G.*V;
+        u = ifft2(U);
+        
+    case 'pseudo_inverse'
+        [xi,yj] = size(H);
+        for i = 1:xi
+            for j = 1:yj
+                if H(i,j) <= 10^(-4)
+                    H(i,j) = inf;
+                end
+            end
+        end
+        G = 1./H;
+        U = G.*V;
+        u = ifft2(U);
+        
     case 'wiener'
         G = conj(H)./(abs(H).^2 + 1/SNR);
         U = G.*V;
