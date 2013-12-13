@@ -16,7 +16,7 @@
 % INPUT OPTIONS
 %=========================================================================%
 
-function [h] = kernel_filter_2D_projection(G)
+function [h] = kernel_filter_2D_projection(G, color)
 
 % Takes the inverse of the kernel and obtains the optical kernel in the
 % freq. domain
@@ -48,9 +48,8 @@ if max(max(H_real))~= max(h)
     disp('The cut is not aligned with the max')
 end
 
-plot(h)
-axis([floor(k1/2)+1-10 , floor(k1/2)+1+10 , 0 , max(h)+.05*max(h)]) 
-
+plot(h,color,'LineWidth',1.5)
+axis([floor(k1/2)+1-10 , floor(k1/2)+1+10 , 0 , max(h)+.05*max(h)])
 
 
 
