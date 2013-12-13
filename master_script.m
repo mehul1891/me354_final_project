@@ -292,10 +292,13 @@ title(['Cameraman blurred by ', PSF_type ' image recovered using ',filter_type])
 
 % Plots the 2D projection of the kernel
 figure
-[g_312] = kernel_filter_2D_projection(G_312);
+[h_real] = real_kernel_2D_projection(real(Im3),v,'-b');
+hold on
+[h_312] = kernel_filter_2D_projection(G_312,'-k');
 title(['Kernel obtained from ',filter_type])
 xlabel('pixels')
 ylabel('Magnitude')
+legend('Real', [filter_type ' filter'])
 
 
 
@@ -329,13 +332,7 @@ ylabel('Magnitude')
 % figure, imshow(v)
 % figure, imshow(u_432)
 % title(['Sphere blurred by ', PSF_type ' image recovered using ',filter_type])
-% 
-% % Plots the 2D projection of the kernel
-% figure
-% [g_432] = kernel_2D_projection(G_432);
-% title(['Kernel obtained from ',filter_type])
-% xlabel('pixels')
-% ylabel('Magnitude')
+
 
 
 % v               = blurred_43;

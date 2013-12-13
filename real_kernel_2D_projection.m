@@ -14,31 +14,30 @@
 
 %=========================================================================%
 % INPUT OPTIONS
+%
+%   u = clear image
+%   v = blurred image
+%
+% OUTPUT OPTIONS
+%
+%   h = the 2D projection of the optical kernel
 %=========================================================================%
 
-function [h] = kernel_filter_2D_projection(G)
+function [h] = real_kernel_2D_projection(u,v,color)
+% color = 'k';
+% u = u_312;
 
-% Takes the inverse of the kernel and obtains the optical kernel in the
-% freq. domain
-H = 1./G;
+% Converts the blurred and the clear images to the frequency domain 
+U = fft2(u);
+V = fft2(v);
 
-% This portion is used to eliminate all the inf and replace them by very
-% small numbers. This was done primarily to compensate for the correction
-% in the pseudo_inverse filter
-[xi,yj] = size(H);
-for i = 1:xi
-    for j = 1:yj
-        if H(i,j) > 9999
-            H(i,j) = 10^(-1);
-        end
-    end
-end
+% Calculates the optical kernel by the use of the real and blurred image
+H = V./U;
 
-% Transforms the optical kernel from the frequency to the time domain
+% Brings the kernel back to the time domain
+H_real = (fftshift(ifft2(H)));
 
-H_real = abs(fftshift(ifft2(H)));
-
-% Obtains the dimmensions of G_real an chooses the middle point to create a
+% Obtains the dimmensions of H_real an chooses the middle point to create a
 % cut project that line to a 2D plane
 [k1,k2] = size(H_real);
 h = H_real(:,floor(k2/2)+1);
@@ -48,13 +47,4 @@ if max(max(H_real))~= max(h)
     disp('The cut is not aligned with the max')
 end
 
-plot(h)
-axis([floor(k1/2)+1-10 , floor(k1/2)+1+10 , 0 , max(h)+.05*max(h)]) 
-
-
-
-
-
-
-
-
+plot(h,color,'LineWidth',1.5)
