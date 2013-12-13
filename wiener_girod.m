@@ -30,7 +30,7 @@ plot_original = 'no'; % Can be 'yes' or 'no'
 plot_blurred  = 'yes'; % Can be 'yes' or 'no'
 add_noise     = 'no'; % Can be 'yes' or 'no''
 edge_det      = 'no'; % Can be 'yes' or 'no'
-var_noise     = 0.000001; % on a scale of 0-1
+var_noise     = 0.01; % on a scale of 0-1
 
 %% Extracting image and introducing noise into it
 disp('Introducing noise in the image')
@@ -39,8 +39,7 @@ tic;
 switch read_image
     case 'local'
         I = imread...
-            ('/Users/mehuloswal/Documents/Dropbox/ME354/presentation/BlurredImageUsed.jpg');
-%         ('/Users/mehuloswal/me354_final_project/image_cereals/image1.jpg');
+            ('/Users/mehuloswal/me354_final_project/new_pictures/IMG_7311.JPG');
         
     case 'global'
         I = imread('peppers.png');
@@ -92,10 +91,11 @@ switch blur_type
 %         PSF = fspecial('motion', LEN, THETA);
 %         RADIUS = 1;
 %         PSF = fspecial('disk', RADIUS);
-        RADIUS = 5;
+        RADIUS = 7;
         ROW = RADIUS;
         COL = RADIUS;
-        PSF = fspecial('gaussian', ROW, COL);
+        PSF = fspecial('disk', RADIUS);
+%         PSF = fspecial('gaussian', ROW,COL);
     otherwise
         error('Blur type specified not yet set up in the code')
 end
@@ -135,15 +135,6 @@ sig_n = sqrt(var_noise);
 SNR = sig.^2/sig_n.^2;
 
 %% BLIND DE-CONVOLUTION: when the PSF is not known
-
-Svv=log10(abs(fftshift(fft2(im))).^2 );
-
-% USE MATLAB INBUILT 
-
-
-%% Zero padding for the image
-
-disp('ZERO PADDING STILL NEEDS TO BE DONE if at all you are going to do it')
 
 
 %% FIR Wiener Filter based on zero mean 

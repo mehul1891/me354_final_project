@@ -135,7 +135,7 @@ H = psf2otf(PSF,size(im));
 H_inv = zeros(size(H));
 for i=1:size(H,1)
     for j=1:size(H,2)
-        if H(i,j)>=2
+        if H(i,j)>=eps
             H_inv(i,j)=1/H(i,j);
         else
             H_inv(i,j)=H_inv(i,j);
