@@ -2,7 +2,7 @@
 
 A = im2double(...
     rgb2gray(...
-    imread('/Users/mehuloswal/me354_final_project/new_pictures/DSCN6155.JPG')));
+    imread('new_pictures/DSCN6155.JPG')));
 % I = A(973:2050,2509:3605);
 I=A;
 figure, imshow(I)
@@ -50,7 +50,10 @@ PSF = PSF1+PSF2;
 noise_var = 0.001;
 estimated_nsr = noise_var / var(I(:));
 
+% Using our own wiener filter
+[u,G] = im_filter(I,'wiener',PSF,noise_var);
+figure, imshow(u), title('using our wiener')
 
+% Using the Wiener filter of matlab.
 wnr2 = deconvwnr(I, PSF, estimated_nsr);
-
-figure, imshow(wnr2)
+figure, imshow(wnr2), title('using Matlab wiener')

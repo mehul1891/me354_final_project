@@ -13,24 +13,21 @@
 
 %=========================================================================%
 % INPUT OPTIONS
-
-% 1. kernel_function     = 'ext' to use lpfilter.m
-%                        = 'int' to use our developed Gauss convolution
-%                        kernel
+% 
+%                      
 %
-% 2. boundary_condition  = 'periodic' to use periodic boundary conditions
-%                        = 'none' to not use any bundary condition
+% 
+%                        
 %
-% 4. plot                = 'yes' or 'no'
-% 5. draw_kernel         = 'yes' or 'no'
-
-
+% 
+% 
 %=========================================================================%
 
 %% Clear previous cache
 clear all; close all; clc;
 
 global gauss_size_factor disk_size_factor motion_size_factor
+global gaussian_sigma
 
 %% User Specified inputs
 
@@ -103,6 +100,7 @@ end
 % Additional factors can be set to 1 for consistency amongst blur types
 % These factors are introduced because PSF_size = 1% was not significatn
 gauss_size_factor    = 2;
+gaussian_sigma       = 5;
 disk_size_factor     = 1;
 motion_size_factor   = 2;
 
@@ -115,7 +113,7 @@ for i = 1:nimages
             case 1
                 PSF_11 = fspecial('gaussian', ...
                     gauss_size_factor*PSF_size(i),...
-                    gauss_size_factor*PSF_size(i));
+                    gaussian_sigma);
                 blurred_11 = imfilter(Im1, PSF_11, 'conv', 'circular');
                 
                 PSF_12 = fspecial('disk', disk_size_factor*PSF_size(i));
@@ -142,7 +140,7 @@ for i = 1:nimages
             case 2
                 PSF_21 = fspecial('gaussian', ...
                     gauss_size_factor*PSF_size(i), ...
-                    gauss_size_factor*PSF_size(i));
+                    gaussian_sigma);
                 blurred_21 = imfilter(Im2, PSF_21, 'conv', 'circular');
                 
                 PSF_22 = fspecial('disk', disk_size_factor*PSF_size(i));
@@ -170,7 +168,7 @@ for i = 1:nimages
             case 3
                 PSF_31 = fspecial('gaussian', ...
                     gauss_size_factor*PSF_size(i), ...
-                    gauss_size_factor*PSF_size(i));
+                    gaussian_sigma);
                 blurred_31 = imfilter(Im3, PSF_31, 'conv', 'circular');
                 
                 PSF_32 = fspecial('disk', disk_size_factor*PSF_size(i));
@@ -198,7 +196,7 @@ for i = 1:nimages
             case 4
                 PSF_41 = fspecial('gaussian', ...
                     gauss_size_factor*PSF_size(i), ...
-                    gauss_size_factor*PSF_size(i));
+                    gaussian_sigma);
                 blurred_41 = imfilter(Im4, PSF_41, 'conv', 'circular');
                 
                 PSF_42 = fspecial('disk', disk_size_factor*PSF_size(i));
@@ -243,7 +241,7 @@ end
     % 1: inverse
     % 2: wiener
     % 3: geo_mean
-    % 4: least squares
+    % 4: least_squares
     % 5: ED+filt
     
 
@@ -253,16 +251,19 @@ PSF_type        = 'disk';
 filter_type     = 'wiener';
 PSF_dim         = PSF_size(2);
 factor          = 'global';
-[u_222,G_222] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_222,G_222]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_222)
 title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
+
 
 v               = blurred_22;
 PSF_type        = 'disk';
 filter_type     = 'geo_mean';
 PSF_dim         = PSF_size(2);
 factor          = 'global';
-[u_223,G_223] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_223,G_223]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_223)
 title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
 
@@ -275,7 +276,7 @@ title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
 % figure, imshow(u_225)
 % title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
 
-clear v
+clear v psf 
 
 % For Gaussian blur in Cameraman
 v               = blurred_31;
@@ -283,7 +284,8 @@ PSF_type        = 'gaussian';
 filter_type     = 'wiener';
 PSF_dim         = PSF_size(3);
 factor          = 'global';
-[u_312,G_312] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_312,G_312]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_312) 
 title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 
@@ -292,7 +294,8 @@ PSF_type        = 'gaussian';
 filter_type     = 'geo_mean';
 PSF_dim         = PSF_size(3);
 factor          = 'global';
-[u_313,G_313] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_313,G_313]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_313)
 title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 
@@ -305,7 +308,7 @@ title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 % figure, imshow(u_315)
 % title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 
-clear v
+clear v psf
 
 % For motion blur in the sphere
 v               = blurred_43;
@@ -313,15 +316,18 @@ PSF_type        = 'motion';
 filter_type     = 'wiener';
 PSF_dim         = PSF_size(4);
 factor          = 'global';
-[u_432,G_432] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_432,G_432]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_432)
 title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
+
 v               = blurred_43;
 PSF_type        = 'motion';
 filter_type     = 'geo_mean';
 PSF_dim         = PSF_size(4);
 factor          = 'global';
-[u_433,G_433] = im_filter(v,filter_type,PSF_type,PSF_dim,var_n,factor);
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_433,G_433]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_433) 
 title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
 
@@ -334,7 +340,7 @@ title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
 % figure, imshow(u_435)
 % title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
 
-clear v
+clear v psf
 
 %%
 

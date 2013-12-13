@@ -12,51 +12,32 @@
 %=========================================================================%
 
 %=========================================================================%
-% INPUT OPTIONS
+% INPUT & OUTPUT OPTIONS
+ 
+% Input image (v)        : Blurry+noisy image to be sharpened
+% 
+% filter_type            : 'inverse'
+%                          'wiener'
+%                          'geom_mean'
+%                          'least_squares'
+%                          'ED+filt'
+% 
+% var_n                  : Some estimate of the variance of noise.Usually
+%                          between 1e-4 to 1e-8
+% 
+% Output image (u)       : Sharpened image output 
+% 
+% filter kernel (G)      : Filter sharpen kernel in fourier domain
 %=========================================================================%
 
 
-function [u,G] = im_filter(v,filter_type,PSF_type,PSF_size,var_n,factor)
-
-global gauss_size_factor disk_size_factor motion_size_factor
+function [u,G] = im_filter(v,filter_type,psf,var_n)
 
 % Image variance
 var_s = var(v(:));
 
 % Signal to Noise ratio (SNR)
 SNR = var_s/var_n;
-
-% Locally set these factors. Can be made automated based on iteration
-switch factor
-    case 'global'
-        g_s_f = gauss_size_factor;
-        d_s_f = disk_size_factor;
-        m_s_f = motion_size_factor;
-    case 'local'
-        g_s_f = 2;
-        d_s_f = 1;
-        m_s_f = 2;
-    otherwise
-        error('Wrong "factor" type specified')
-end
-        
-
-% Internal PSF kernel to deblur the image with
-switch PSF_type
-    case 'motion'
-        psf = fspecial('motion', ...
-            m_s_f*PSF_size,...
-            m_s_f*PSF_size);
-    case 'gaussian'
-        psf = fspecial('gaussian',...
-            g_s_f*PSF_size,...
-            g_s_f*PSF_size);
-    case 'disk'
-        psf = fspecial('disk',...
-            d_s_f*PSF_size);
-    otherwise
-        error('Blur type specified not yet set up in the code')
-end
 
 % Making the PSF of the same size as the image
 pad = size(v);
