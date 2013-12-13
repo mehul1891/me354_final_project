@@ -235,7 +235,8 @@ end
 
 
 % Index read guide
-% u_221: 2nd image, disk blur, filter index
+% u_xyz: x=image no., y=blur_type, z=filter_type
+% u_221: 2nd image, disk blur, wiener
 
 % Filter index
     % 1: inverse
@@ -265,6 +266,16 @@ factor          = 'global';
 psf             = PSF_gen(PSF_type,PSF_dim,factor);
 [u_223,G_223]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_223)
+title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
+
+v               = blurred_22;
+PSF_type        = 'disk';
+filter_type     = 'least_squares';
+PSF_dim         = PSF_size(2);
+factor          = 'global';
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_224,G_224]   = im_filter(v,filter_type,psf,var_n);
+figure, imshow(u_224)
 title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
 
 % v               = blurred_22;
@@ -299,6 +310,16 @@ psf             = PSF_gen(PSF_type,PSF_dim,factor);
 figure, imshow(u_313)
 title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
 
+v               = blurred_31;
+PSF_type        = 'gaussian';
+filter_type     = 'least_squares';
+PSF_dim         = PSF_size(3);
+factor          = 'global';
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_314,G_314]   = im_filter(v,filter_type,psf,var_n);
+figure, imshow(u_314)
+title(['Cameraman blurred by ', PSF_type ' image recovered using',filter_type])
+
 % v               = blurred_31;
 % PSF_type        = 'gaussian';
 % filter_type     = 'ED+filt';
@@ -329,6 +350,16 @@ factor          = 'global';
 psf             = PSF_gen(PSF_type,PSF_dim,factor);
 [u_433,G_433]   = im_filter(v,filter_type,psf,var_n);
 figure, imshow(u_433) 
+title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
+
+v               = blurred_43;
+PSF_type        = 'motion';
+filter_type     = 'least_squares';
+PSF_dim         = PSF_size(4);
+factor          = 'global';
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_434,G_434]   = im_filter(v,filter_type,psf,var_n);
+figure, imshow(u_434) 
 title(['Sphere blurred by ', PSF_type ' image recovered using',filter_type])
 
 % v               = blurred_43;

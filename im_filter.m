@@ -71,6 +71,9 @@ switch filter_type
         u = ifft2(U);
     
     case 'least_squares'
+        NP = var_n*prod(size(v));
+        u = deconvreg(v,psf,NP);
+        G = fft2(u)./V;
     
     case 'ED+filt'
         
@@ -102,6 +105,8 @@ switch filter_type
                 U_filt = G_filt.*V;
                 u_filt = ifft2(U_filt);
             case 'least_squares'
+                NP = var_n*prod(size(v));
+                u_filt = deconvreg(v,psf,NP);
             otherwise
             error('Check type of filter selected')
         end
