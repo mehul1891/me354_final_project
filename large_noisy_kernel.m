@@ -7,7 +7,7 @@
 
 % Developers             : David Manosalvas & Mehul Oswal
 % Organization           : Stanford University
-% Objective              : Image retrieval, sharpness metric, test metric
+% Objective              : Splitting image technique for noisy images
 % Contact information    : deman@stanford.edu & moswal@stanford.edu
 %=========================================================================%
 
