@@ -156,5 +156,4 @@ end
 % Normalizes the cleared image
 u = u./max(max(u));
 % Sets the values of the image to be always possitive
-u = abs(u);
 end

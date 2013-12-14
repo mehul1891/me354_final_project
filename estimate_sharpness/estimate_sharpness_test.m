@@ -18,8 +18,11 @@
 function []=estimate_sharpness_test()
 
 close all;
-I=imread('lena.jpg');
+
+I=imread('peppers.png');
 G=double(rgb2gray(I));
+G = G./max(max(G));
+
 
 % measure the sharpness of original image
 sharpness=estimate_sharpness(G);
@@ -28,6 +31,7 @@ disp(['Sharpness of original image: ' num2str(sharpness)]);
 % iteratively smooth and measure sharpness
 for i=3:2:11
     F=imfilter(G, fspecial('average',i), 'replicate');
+    F = F./max(max(F));
     sharpness=estimate_sharpness(F);
     disp(['Sharpness after mean filtering: ' num2str(sharpness) '.  Kernel Size: ' num2str(i)]);
 end
@@ -36,6 +40,7 @@ disp(' ');
 % iteratively sharpen the image and measure sharpness
 for i=1:-0.25:0
     F=imfilter(G, fspecial('unsharp',i), 'replicate');
+    F = F./max(max(F));
     sharpness=estimate_sharpness(F);
     disp(['Sharpness after unsharp masking: ' num2str(sharpness) '.  Alpha: ' num2str(i)]);
 end

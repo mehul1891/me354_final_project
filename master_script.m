@@ -334,15 +334,15 @@ end
 %     ['geo-mean filter ', num2str(error_11(4))]);%,...
 % %     ['least-squares filter ' num2str(error_11(5))]);
 
-
-% For sphere 
-    % motion
+%===== Filter comparison for a balistic sphere with motion blurr ========%
+% PSF charactristics for the initial guess
 v               = blurred_43;
 PSF_type        = 'motion';
 PSF_dim         = PSF_size(4);
 factor          = 'global';
 psf             = PSF_gen(PSF_type,PSF_dim,factor);
 
+% Filtering
 filter_type     = 'inverse';
 [u_111,G_111]   = im_filter(v,filter_type,psf,var_n);
 filter_type     = 'pseudo_inverse';
@@ -353,7 +353,10 @@ filter_type     = 'geo_mean';
 [u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
 filter_type     = 'least_squares';
 [u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
+[mssim ssim_map] = ssim_index(Im4, Im4);
+disp(mssim)
 
+% Plotting the 2D projection of the optical kernel
 figure
 [h_real] = real_kernel_2D_projection(real(Im4),v,':b');
 hold on
@@ -363,12 +366,14 @@ hold on
 [h_114] = kernel_filter_2D_projection(G_114,'-c');
 % [h_115] = kernel_filter_2D_projection(G_115,':k');
 
+% Norm2 used to calculate the difference betweent the kernels
 % error_11(1) = norm(h_real-h_111,2);
 error_11(2) = norm(h_real-h_112,2);
 error_11(3) = norm(h_real-h_113,2);
 error_11(4) = norm(h_real-h_114,2);
 % error_11(5) = norm(h_real-h_115,2);
 
+% Title | axis | legend
 title(['Optical kernel for supersonic flow around a sphere'])
 xlabel('pixels')
 ylabel('Magnitude')
@@ -377,3 +382,14 @@ legend('Real', ...
     'wiener filter ' ,...
     'geo-mean filter ');%,...
 %     ['least-squares filter ' num2str(error_11(5))]);
+
+% Automated metrics used to compare the effect of the filters
+
+[grad_11(1), simind_11(1), jn_11(1)] = sharpness_metrics(u_111, Im4);
+[grad_11(2), simind_11(2), jn_11(2)] = sharpness_metrics(u_112, Im4);
+[grad_11(3), simind_11(3), jn_11(3)] = sharpness_metrics(u_113, Im4);
+[grad_11(4), simind_11(4), jn_11(4)] = sharpness_metrics(u_114, Im4);
+[grad_11(5), simind_11(5), jn_11(5)] = sharpness_metrics(u_115, Im4);
+[val_g_11,ind_g_11] = min(grad_11);
+[val_s_11,ind_s_11] = max(simind_11);
+[val_j_11,ind_j_11] = min(jn_11);

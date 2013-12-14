@@ -14,6 +14,11 @@
 
 %=========================================================================%
 % INPUT OPTIONS
+% G     = 3D Optical Kernel
+% color = Line type and color for the plot
+%
+% OUTPUT OPTIONS
+% h     = 2D projectionn of the optical kernel
 %=========================================================================%
 
 function [h] = kernel_filter_2D_projection(G, color)
