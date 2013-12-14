@@ -228,27 +228,73 @@ for i = 1:nimages
     end
 end
 
-% For Disk type blur in Lena
-v               = blurred_12;
-PSF_type        = 'disk';
-filter_type     = 'wiener';
+%% Plotting
+
+% Index read guide
+% u_221: 2nd image, disk blur, filter index
+
+% Filter index
+    % 1: inverse
+    % 2: pseudo_inverse
+    % 3: wiener
+    % 4: geo_mean
+    % 5: least_squares
+    % 6: ED+filt
+
+
+
+
+% For Peppers 
+    % Gaussian
+v               = blurred_11;
+PSF_type        = 'gaussian';
 PSF_dim         = PSF_size(1);
 factor          = 'global';
 psf             = PSF_gen(PSF_type,PSF_dim,factor);
-[u_222,G_222]   = im_filter(v,filter_type,psf,var_n);
 
-figure, imshow(u_222)
-title(['Peppers blurred by ', PSF_type ' image recovered using ',filter_type])
+filter_type     = 'inverse';
+[u_111,G_111]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'pseudo_inverse';
+[u_112,G_112]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'wiener';
+[u_113,G_113]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'geo_mean';
+[u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'least_squares';
+[u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
+
+%figure, imshow(u_111)
+%title(['Peppers blurred by ', PSF_type ' image recovered using ',filter_type])
 
 % Plots the 2D projection of the kernel
 figure
 [h_real] = real_kernel_2D_projection(real(Im1),v,'-b');
 hold on
-[h_222] = kernel_filter_2D_projection(G_222,'-k');
-title(['Kernel obtained from ',filter_type])
+[h_111] = kernel_filter_2D_projection(G_111,'-r');
+[h_112] = kernel_filter_2D_projection(G_112,'-g');
+[h_113] = kernel_filter_2D_projection(G_113,'-y');
+[h_114] = kernel_filter_2D_projection(G_114,'-c');
+[h_115] = kernel_filter_2D_projection(G_114,':k');
+
+error_11(1) = norm(h_real-h_111,2);
+error_11(2) = norm(h_real-h_112,2);
+error_11(3) = norm(h_real-h_113,2);
+error_11(4) = norm(h_real-h_114,2);
+error_11(5) = norm(h_real-h_115,2);
+
+[val, idx] = min(error_11);
+switch idx
+    case 1
+        disp(['The filter that works the best is' best_filt])
+        
+title(['Optical kernel for Peppers'])
 xlabel('pixels')
 ylabel('Magnitude')
-legend('Real', [filter_type ' filter'])
+legend('Real', ['inverse filter ' num2str(error_11(1))],...
+    ['pseudo-inverse filter ' num2str(error_11(2))],...
+    ['wiener filter ' num2str(error_11(3))],...
+    ['geo-mean filter', ...
+    'least-squares filter')
 
 
 
