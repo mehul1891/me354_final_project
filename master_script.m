@@ -227,3 +227,14 @@ for i = 1:nimages
         end
     end
 end
+
+% For Disk type blur in Lena
+v               = blurred_22;
+PSF_type        = 'disk';
+filter_type     = 'wiener';
+PSF_dim         = PSF_size(2);
+factor          = 'global';
+psf             = PSF_gen(PSF_type,PSF_dim,factor);
+[u_222,G_222]   = im_filter(v,filter_type,psf,var_n);
+figure, imshow(u_222)
+title(['Lena blurred by ', PSF_type ' image recovered using',filter_type])
