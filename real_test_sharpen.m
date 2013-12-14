@@ -1,4 +1,5 @@
 % Trial File to play with filters.
+clear all;close all;clc
 
 A = im2double(...
     rgb2gray(...
@@ -50,10 +51,64 @@ PSF = PSF1+PSF2;
 noise_var = 0.001;
 estimated_nsr = noise_var / var(I(:));
 
-% Using our own wiener filter
-[u,G] = im_filter(I,'wiener',PSF,noise_var);
-figure, imshow(u), title('using our wiener')
+psf = PSF;
+var_n = noise_var;
+v = I;
+%%
+filter_type     = 'inverse';
+[u_111,G_111]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'pseudo_inverse';
+[u_112,G_112]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'wiener';
+[u_113,G_113]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'geo_mean';
+[u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
+filter_type     = 'least_squares';
+[u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
 
-% Using the Wiener filter of matlab.
-wnr2 = deconvwnr(I, PSF, estimated_nsr);
-figure, imshow(wnr2), title('using Matlab wiener')
+figure, imshow(real(u_113))
+title('Noisy blurred image recovered using wiener')
+
+%%
+% Plots the 2D projection of the kernel
+Im1 = u_113;
+figure
+[h_real] = real_kernel_2D_projection(real(Im1),v,'-b');
+hold on
+[h_111] = kernel_filter_2D_projection(G_111,'-r');
+[h_112] = kernel_filter_2D_projection(G_112,'-g');
+[h_113] = kernel_filter_2D_projection(G_113,'-y');
+[h_114] = kernel_filter_2D_projection(G_114,'-c');
+[h_115] = kernel_filter_2D_projection(G_115,':k');
+
+
+
+error_11(1) = norm(h_real-h_111,2);
+error_11(2) = norm(h_real-h_112,2);
+error_11(3) = norm(h_real-h_113,2);
+error_11(4) = norm(h_real-h_114,2);
+error_11(5) = norm(h_real-h_115,2);
+
+title(['Optical kernel for Peppers'])
+xlabel('pixels')
+ylabel('Magnitude')
+legend('Real', ['inverse filter ' num2str(error_11(1))],...
+    ['pseudo-inverse filter ' num2str(error_11(2))],...
+    ['wiener filter ' num2str(error_11(3))],...
+    ['geo-mean filter ', num2str(error_11(4))],...
+    ['least-squares filter ' num2str(error_11(5))]);
+
+
+% Sharpness metric based on SSIM.
+[mssim, ~] = ssim_index(u_113, u_112, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
+
+%=========================================================================%
+
+% % Using our own wiener filter
+% [u,G] = im_filter(I,'wiener',PSF,noise_var);
+% figure, imshow(u), title('using our wiener')
+
+% % Using the Wiener filter of matlab.
+% wnr2 = deconvwnr(I, PSF, estimated_nsr);
+% figure, imshow(wnr2), title('using Matlab wiener')
+%=========================================================================%

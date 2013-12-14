@@ -57,7 +57,7 @@ switch filter_type
         for i = 1:xi
             for j = 1:yj
                 if H(i,j) <= 10^(-7)
-                    H(i,j) = inf;
+%                     H(i,j) = inf;
                 end
             end
         end
@@ -81,7 +81,7 @@ switch filter_type
                 end
             end
         end
-        s = 0.5;
+        s = 0.52;
         G = (H_inv.^s).*(conj(H)./(abs(H).^2 + 1/SNR)).^(1-s);
         U = G.*V;
         u = ifft2(U);

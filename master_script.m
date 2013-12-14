@@ -34,7 +34,7 @@ global gaussian_sigma
 % Additive noise parameters
 add_noise           = 'no';
 mean_n              =  0   ;
-var_n               = 1e-5 ;
+var_n               =  eps ;
 
 
 %% Images that this code is trained and tested with
@@ -260,7 +260,7 @@ filter_type     = 'geo_mean';
 filter_type     = 'least_squares';
 [u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
 
-%figure, imshow(u_111)
+% figure, imshow(real(u_112))
 %title(['Peppers blurred by ', PSF_type ' image recovered using ',filter_type])
 
 % Plots the 2D projection of the kernel
@@ -271,7 +271,7 @@ hold on
 [h_112] = kernel_filter_2D_projection(G_112,'-g');
 [h_113] = kernel_filter_2D_projection(G_113,'-y');
 [h_114] = kernel_filter_2D_projection(G_114,'-c');
-[h_115] = kernel_filter_2D_projection(G_114,':k');
+[h_115] = kernel_filter_2D_projection(G_115,':k');
 
 error_11(1) = norm(h_real-h_111,2);
 error_11(2) = norm(h_real-h_112,2);

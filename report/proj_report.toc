@@ -1,7 +1,9 @@
-\contentsline {chapter}{\numberline {1}{Motivation \& Introduction}}{2}
-\contentsline {section}{\numberline {1.1}}{2}
-\contentsline {section}{\numberline {1.2}Appendix}{3}
-\contentsline {subsection}{\numberline {1.2.1}Additional Results}{3}
-\contentsline {subsection}{\numberline {1.2.2}MATLAB Codes}{3}
-\contentsline {subsubsection}{Master script}{3}
-\contentsline {section}{\numberline {1.3}References}{3}
+\contentsline {chapter}{\numberline {1}Introduction}{2}
+\contentsline {chapter}{\numberline {2}Filter Characteristics}{3}
+\contentsline {chapter}{\numberline {3}Sharpness metric}{4}
+\contentsline {chapter}{\numberline {4}Project Summary}{5}
+\contentsline {chapter}{\numberline {5}Appendix}{6}
+\contentsline {section}{\numberline {5.1}Additional Results}{6}
+\contentsline {section}{\numberline {5.2}Matlab Codes}{6}
+\contentsline {subsection}{\numberline {5.2.1}Master script}{6}
+\contentsline {section}{\numberline {5.3}References}{6}

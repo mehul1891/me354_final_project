@@ -29,7 +29,7 @@ H = 1./G;
 for i = 1:xi
     for j = 1:yj
         if H(i,j) > 9999
-            H(i,j) = 10^(-1);
+%             H(i,j) = 10^(-1);
         end
     end
 end

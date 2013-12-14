@@ -1,16 +1,16 @@
-\documentclass{article}
+\documentclass{report}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{caption}
-\usepackage[top=0.7in,bottom=0.7in,left=0.5in,right=0.5in]{geometry}
+\usepackage[top=0.8in,bottom=0.8in,left=0.8in,right=0.8in]{geometry}
 \usepackage[framed,numbered,autolinebreaks,useliterate]{/Applications/TeX/mcode}
 \usepackage{fancyhdr}
 
 
-\title{ME354: Experimental Methods in Fluids Mechanics \\[8pt] \large Final Project: Bringing Life To Images \\ \large{Autumn 2013}}
-\author{David Manosalvas \\ Mehul Oswal}
+\title{ME354: Experimental Methods in Fluids Mechanics \\[10pt] \large Final Project: Bringing Life To Images \\ \large{Autumn 2013}}
+\author{David Manosalvas \\[2pt] Mehul Oswal}
 \date{}
 \begin{document}
 \maketitle
@@ -18,10 +18,34 @@
 \lhead{Autumn'13}
 \chead{ME354 Project Report}
 \rhead{Manosalvas \& Oswal}
-%\tableofcontents
-\section{Motivation \& Introduction}
-\section{Training filters}
-\section{Sharpness metric}
+\tableofcontents
+\chapter{Introduction}
+Removing noise from an original signal is a challenging problem receiving due attention from researchers. Digital images play an important role in experimental research and images acquired are often blurry and noisy. Thus prior to analyzing image data, denoising and sharpening becomes necessary. This project aims to explore some of the widely used image enhancement algorithms to sharpen images and implement a robust metric to quantify the performance of filters under different blur sources.\\
+
+\noindent {\bf Mathematical theory behind image processing: }\\
+Blurred images are modeled as the true image convolved with a point spread function plus additive noise. The point spread function (PSF) that convolves the true image is generally a property associated with the optics that have contributed to the blur while noise can be due to poor illuminance, quantization among other sources. Mathematically, a blurry image can be represented as follows\\
+\begin{equation}
+v(m,n)= h(m,n) \star u(m,n) + \eta(m,n)
+\end{equation}
+where, $u(m,n)$ is the true image, $h(m,n)$ is the PSF, $\eta(m,n)$ is the additive noise and $v(m,n)$ is the blurry image. Image sharpening involves calculating an estimate of the true image $\hat{u}(m,n)$ using filters.
+\begin{equation}
+\hat{u}(m,n)= g(m,n) \star v(m,n)
+\end{equation}
+Filters calculate function $g(m,n)$ using some knowledge of the PSF causing the blur and an estimate of the signal to noise ratio.\\
+
+\noindent {\bf Experimental \& Analysis set up: }\\
+The experimental and analysis setup for this project is as depicted in the following figure.
+\begin{figure}[h!]
+  \centering
+                \centering
+                \includegraphics[width=.5\textwidth]{experimental_setup.png}
+                \caption{Experimental Setup consists of a good camera and a computer system. The camera captures images under pre-defined settings like focal length, shutter speed, aperture size and luminance while computer has been used to perform image enhancement \& filter analysis.}
+                \end{figure}
+
+
+\chapter{Filter Characteristics}
+\chapter{Sharpness metric}
+\chapter{Project Summary}
 
 %\begin{figure}[h!]
 %        \centering
@@ -55,10 +79,10 @@
 %\end{figure}
 
 \newpage
-\section{Appendix}
-\subsection{Additional Results}
-\subsection{Matlab Codes}
-\subsubsection{Master script}
+\chapter{Appendix}
+\section{Additional Results}
+\section{Matlab Codes}
+\subsection{Master script}
 %\lstinputlisting{Driver_prob1.m}
 \section{References}
 \begin{enumerate}
