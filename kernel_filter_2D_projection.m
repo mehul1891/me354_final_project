@@ -49,7 +49,7 @@ if max(max(H_real))~= max(h)
 end
 
 plot(h,color,'LineWidth',1.5)
-axis([floor(k1/2)+1-10 , floor(k1/2)+1+10 , 0 , max(h)+.05*max(h)])
+axis([floor(k1/2)+1-50 , floor(k1/2)+1+50 , 0 , max(h)+.05*max(h)])
 
 
 

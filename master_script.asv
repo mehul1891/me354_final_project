@@ -231,7 +231,7 @@ end
 % For Disk type blur in Lena
 v               = blurred_22;
 PSF_type        = 'disk';
-filter_type     = 'pseudo_inverse';
+filter_type     = 'wiener';
 PSF_dim         = PSF_size(2);
 factor          = 'global';
 psf             = PSF_gen(PSF_type,PSF_dim,factor);
