@@ -57,7 +57,7 @@ switch filter_type
         for i = 1:xi
             for j = 1:yj
                 if H(i,j) <= 10^(-7)
-%                     H(i,j) = inf;
+                    H(i,j) = inf;
                 end
             end
         end
