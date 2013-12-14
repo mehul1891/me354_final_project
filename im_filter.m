@@ -56,7 +56,7 @@ switch filter_type
         [xi,yj] = size(H);
         for i = 1:xi
             for j = 1:yj
-                if H(i,j) <= 10^(-1)
+                if H(i,j) <= 10^(-7)
                     H(i,j) = inf;
                 end
             end
