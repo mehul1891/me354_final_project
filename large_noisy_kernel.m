@@ -1,12 +1,44 @@
+%=========================================================================%
+% NOISY KERNEL SCRIPT    : ME354 FINAL PROJECT, AUT 2013
+%=========================================================================%
+
+%=========================================================================%
+% REPOSITORY INFORMATION
+
+% Developers             : David Manosalvas & Mehul Oswal
+% Organization           : Stanford University
+% Objective              : Image retrieval, sharpness metric, test metric
+% Contact information    : deman@stanford.edu & moswal@stanford.edu
+%=========================================================================%
+
+%=========================================================================%
+% INPUT OPTIONS
+% 
+% u                      : Sharper image                     
+%
+% v                      : Blurry image
+%                        
+%
+% 
+% 
+%=========================================================================%
+
+function [h] = large_noisy_kernel(u,v)
+
+% u = imread('DSC_0517.jpg');
+% v = imread('DSC_0518.jpg');
+
+if size(u,3)>1
+    u_gray = rgb2gray(u);
+    v_gray = rgb2gray(v);
+else
+    u_gray = u;
+    v_gray = v;
+end
 
 
-
-u = imread('DSC_0517.jpg');
-v = imread('DSC_0518.jpg');
-
-
-[u1 u2 u3 u4 u5 u6 u7 u8 u9] = picture_split(u);
-[v1 v2 v3 v4 v5 v6 v7 v8 v9] = picture_split(v);
+[u1,u2,u3,u4,u5,u6,u7,u8,u9] = picture_split(u_gray);
+[v1,v2,v3,v4,v5,v6,v7,v8,v9] = picture_split(v_gray);
 
 [h1]=noisy_kernel(u1,v1);
 [h2]=noisy_kernel(u2,v2);
@@ -20,13 +52,18 @@ v = imread('DSC_0518.jpg');
 
 h = (h1+h2+h3+h4+h5+h6+h7+h8+h9)/9;
 
-surf(h,'LineStyle','none')
-%%
-[k1,k2] = size(h);
+% make h the same size as the image
+pad_dim = size(u_gray)-size(h);
+h = padarray(h,pad_dim);
 
-[k1,k2] = size(h);
-h_line = h(:,floor(k2/2)+1);
-figure
-plot(h_line)
-axis([floor(k1/2)+1-50 , floor(k1/2)+1+50 , 0 , max(h)+.05*max(h)])
 
+% surf(h,'LineStyle','none')
+% %%
+% [k1,k2] = size(h);
+% 
+% [k1,k2] = size(h);
+% h_line = h(:,floor(k2/2)+1);
+% figure
+% plot(h_line)
+% axis([floor(k1/2)+1-50 , floor(k1/2)+1+50 , 0 , max(h)+.05*max(h)])
+% 
