@@ -101,6 +101,22 @@ switch filter_type
         
         switch gen_filt
             case 'inverse'
+                G_filt = 1./H;
+                U_filt = G_filt.*V;
+                u_filt = ifft2(U_filt);
+
+            case 'pseudo_inverse'
+                [xi,yj] = size(H);
+                for i = 1:xi
+                    for j = 1:yj
+                        if H(i,j) <= 10^(-1)
+                            H(i,j) = inf;
+                        end
+                    end
+                end
+                G_filt = 1./H;
+                U_filt = G_filt.*V;
+                u_filt = ifft2(U_filt);
             case 'wiener'
                 G_filt = conj(H)./(abs(H).^2 + 1/SNR);
                 U_filt = G_filt.*V;
