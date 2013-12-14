@@ -32,7 +32,7 @@ global gaussian_sigma
 %% User Specified inputs
 
 % Additive noise parameters
-add_noise           = 'yes';
+add_noise           = 'no';
 mean_n              =  0   ;
 var_n               = 1e-5 ;
 
@@ -229,20 +229,20 @@ for i = 1:nimages
 end
 
 % For Disk type blur in Lena
-v               = blurred_22;
+v               = blurred_12;
 PSF_type        = 'disk';
-filter_type     = 'pseudo_inverse';
-PSF_dim         = PSF_size(2);
+filter_type     = 'wiener';
+PSF_dim         = PSF_size(1);
 factor          = 'global';
 psf             = PSF_gen(PSF_type,PSF_dim,factor);
 [u_222,G_222]   = im_filter(v,filter_type,psf,var_n);
 
 figure, imshow(u_222)
-title(['Lena blurred by ', PSF_type ' image recovered using ',filter_type])
+title(['Peppers blurred by ', PSF_type ' image recovered using ',filter_type])
 
 % Plots the 2D projection of the kernel
 figure
-[h_real] = real_kernel_2D_projection(real(Im2),v,'-b');
+[h_real] = real_kernel_2D_projection(real(Im1),v,'-b');
 hold on
 [h_222] = kernel_filter_2D_projection(G_222,'-k');
 title(['Kernel obtained from ',filter_type])

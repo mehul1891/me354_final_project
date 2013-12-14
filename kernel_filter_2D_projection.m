@@ -41,7 +41,7 @@ H_real = abs(fftshift(ifft2(H)));
 % Obtains the dimmensions of G_real an chooses the middle point to create a
 % cut project that line to a 2D plane
 [k1,k2] = size(H_real);
-h = H_real(:,floor(k2/2)+1);
+h = H_real(:,floor(k2/2));
 
 % Checks to make sure that the max peak is projected in 2D space
 if max(max(H_real))~= max(h)
