@@ -7,8 +7,7 @@
 
 % Developers             : David Manosalvas & Mehul Oswal
 % Organization           : Stanford University
-% Objective              : Function used to condense all the sharpness
-% metrics
+% Objective              : Function to condense all the sharpness metrics
 % Contact information    : deman@stanford.edu & moswal@stanford.edu
 %=========================================================================%
 
@@ -42,7 +41,7 @@ if size(u) == size(ref);
     [simind ssim_map] = ssim_index(u, ref);
 else
     simind = 0;
-    disp('No reference image found')
+    disp('No reference image')
 end
 
 
