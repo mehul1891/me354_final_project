@@ -8,12 +8,13 @@ This project aims to explore some of the widely used image enhancement algorithm
 
 
 \noindent {\bf Experimental \& Analysis setup: }\\
-The experimental and analysis setup for this project is as depicted in the following figure.
+The experimental and analysis setup for this project is as depicted in Figure~\ref{fig:exp_setup}.
 \begin{figure}[h!]
   \centering
                 \centering
                 \includegraphics[width=.7\textwidth]{experimental_setup.png}
                 \caption{Experimental setup consists of a good camera, a tripod, and a computer system. The camera captures images under pre-defined settings such as focal length, shutter speed, aperture size and luminance, while the computer is used to perform image enhancement \& filter analysis.}
+\label{fig:exp_setup}                
 \end{figure}
 
 \noindent Our analysis architecture is designed to meet the following objectives:
@@ -22,4 +23,3 @@ The experimental and analysis setup for this project is as depicted in the follo
 \item Generally, the sharpness of an image is determined by human visual systems. This process can be automated and made simpler if there was a robust metric to evaluate the sharpness of a restored image, and thus decide the optimum filter to restore a particular set of images. Before moving forward to automating the process of image sharpening, its important to understand the criteria and its limitations. For this purpose, three different sharpness metrics have been implemented and the criteria used has been tested against train images to understand its behavior. Finally, an automated function has been implemented and tested on an experimentally obtained image. The results are promising, but further development is required to make the function fully automated.
 
 \end{enumerate}
-\newpage
