@@ -365,6 +365,7 @@ hold on
 [h_113] = kernel_filter_2D_projection(G_113,'-r');
 [h_114] = kernel_filter_2D_projection(G_114,'-c');
 % [h_115] = kernel_filter_2D_projection(G_115,':k');
+axis([170 180 -.005 .055])
 
 % Norm2 used to calculate the difference betweent the kernels
 % error_11(1) = norm(h_real-h_111,2);
