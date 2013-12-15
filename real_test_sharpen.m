@@ -3,33 +3,34 @@ clear all;close all;clc
 
 A = im2double(...
     rgb2gray(...
-    imread('new_pictures/IMG_7310.JPG')));
-% imread('new_pictures/DSCN6155.JPG'
-II = A(973:2050,2509:3605);
+    imread('new_pictures/DSCN6155.JPG')));
+% imread('new_pictures/IMG_7310.JPG')
+% II = A(973:2050,2509:3605);
 
-% I=A;
+II=A;
 figure, imshow(II)
 %%
-% Two PSF's added on top of each other to get the best sharpness
-psf1 = fspecial('disk',2);
-% PSF2 = zeros(size(PSF1));
-psf2 = fspecial('gaussian',10,8);
-
-blurred_11 = imfilter(II, psf1, 'conv', 'circular');
-% blurred_11 = I;
-blurred_12 = imfilter(blurred_11, psf2, 'conv', 'circular');
-
-figure, imshow(blurred_12)
+% % Two PSF's added on top of each other to get the best sharpness
+% psf1 = fspecial('disk',2);
+% % PSF2 = zeros(size(PSF1));
+% psf2 = fspecial('gaussian',10,8);
+% 
+% blurred_11 = imfilter(II, psf1, 'conv', 'circular');
+% % blurred_11 = I;
+% blurred_12 = imfilter(blurred_11, psf2, 'conv', 'circular');
+% 
+% figure, imshow(blurred_12)
+% I = blurred_12;
 
 %% 
-I = blurred_12;
 
+I = II;
 % making the PSFs of the same size. Can also be considered as zero
 % padding.
-PSF1 = fspecial('disk',4);
+PSF1 = fspecial('disk',10);
 % PSF2 = zeros(size(PSF1));
 
-PSF2 = fspecial('gaussian',10,8);
+PSF2 = fspecial('gaussian',60,8);
 % PSF1 = zeros(size(PSF2));
 
 
@@ -71,21 +72,21 @@ psf = PSF;
 var_n = noise_var;
 v = I;
 %%
-filter_type     = 'inverse';
-[u_111,G_111]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_111)), title(['Image restored using ',filter_type]);
-filter_type     = 'pseudo_inverse';
-[u_112,G_112]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_112)), title(['Image restored using ',filter_type]);
-filter_type     = 'wiener';
-[u_113,G_113]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_113)), title(['Image restored using ',filter_type]);
-filter_type     = 'geo_mean';
-[u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_114)), title(['Image restored using ',filter_type]);
-filter_type     = 'least_squares';
-[u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_115)), title(['Image restored using ',filter_type]);
+% filter_type     = 'inverse';
+% [u_111,G_111]   = im_filter(v,filter_type,psf,var_n);
+% figure, imshow(real(u_111)), title(['Image restored using ',filter_type]);
+% filter_type     = 'pseudo_inverse';
+% [u_112,G_112]   = im_filter(v,filter_type,psf,var_n);
+% figure, imshow(real(u_112)), title(['Image restored using ',filter_type]);
+% filter_type     = 'wiener';
+% [u_113,G_113]   = im_filter(v,filter_type,psf,var_n);
+% figure, imshow(real(u_113)), title(['Image restored using ',filter_type]);
+% filter_type     = 'geo_mean';
+% [u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
+% figure, imshow(real(u_114)), title(['Image restored using ',filter_type]);
+% filter_type     = 'least_squares';
+% [u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
+% figure, imshow(real(u_115)), title(['Image restored using ',filter_type]);
 % 
 % figure, imshow(real(u_113))
 % title('Noisy blurred image recovered using wiener')
@@ -121,24 +122,24 @@ figure, imshow(real(u_115)), title(['Image restored using ',filter_type]);
 % 
 % 
 % Sharpness metric based on SSIM.
-disp('Original image to work with');
-[mssim_true, ~] = ssim_index(blurred_12, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
-disp('inverse')
-[mssim1, ~] = ssim_index(u_111, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
-disp('pseudo inverse')
-[mssim2, ~] = ssim_index(u_112, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
-disp('wiener')
-[mssim3, ~] = ssim_index(u_113, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
-disp('geo_mean')
-[mssim4, ~] = ssim_index(u_114, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
-disp('least_squares')
-[mssim5, ~] = ssim_index(u_115, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
+% disp('Original image to work with');
+% [mssim_true, ~] = ssim_index(blurred_12, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
+% disp('inverse')
+% [mssim1, ~] = ssim_index(u_111, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
+% disp('pseudo inverse')
+% [mssim2, ~] = ssim_index(u_112, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
+% disp('wiener')
+% [mssim3, ~] = ssim_index(u_113, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
+% disp('geo_mean')
+% [mssim4, ~] = ssim_index(u_114, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
+% disp('least_squares')
+% [mssim5, ~] = ssim_index(u_115, II, [0.01 0.03], fspecial('gaussian', 11, 1.5), 1)
 
 %=========================================================================%
 
-% Using our own wiener filter
-% [u,G] = im_filter(I,'wiener',PSF,noise_var);
-% figure, imshow(u), title('using wiener')
+Using our own wiener filter
+[u,G] = im_filter(I,'wiener',PSF,noise_var);
+figure, imshow(u)
 
 % % Using the Wiener filter of matlab.
 % wnr2 = deconvwnr(I, PSF, estimated_nsr);
