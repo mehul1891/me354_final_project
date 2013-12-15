@@ -1,0 +1,15 @@
+% !TEX root = ./proj_report.tex
+%\graphicspath{{figure_project_summary/}}% Set graphics path location
+
+\section{Conclusions}
+The motivation for doing this project stemmed from the need of having good image data for experimental analysis but which often is blurry and noisy. The two major objectives of this project were to study and implement various image filtering and sharpening algorithms and try to automate the sharpening process using different sharpness metrics. The following list summarizes the objectives met and our efforts in a clear, concise way,
+
+\begin{itemize}
+\item Used the mathematical tools learned in class such as Fourier transforms, convolution, de-convolutions, SNR, boundary conditions to understand the effect of optics and noise on images.
+\item Study \& implement (in MatLab) the most commonly used de-blurring filters and sharpening algorithms. There are many filters that can be used to process images differing in restored image quality and implementation ease. Five (5) different filters were implemented for the purposes of this project providing different perspectives and mathematical theory on recovering images.
+\item Quantify the effect that de-blurring filters have on the quality of images using sharpness metrics. Often in image sharpening, the sharpness criteria is decided by human visual systems, but this can be a hurdle if the aim is to automate the process with minimum user input and interference. This required the study of a robust sharpness metric which could compare the performance of enhancement effectiveness across different filters with or without a reference clear image.
+\item Design and implement an automated image sharpening algorithm. Having studied different filters and sharpness metrics, a rudimentary algorithm was implemented to sharpen images with minimum user input. As the state the code is currently in, it requires an initial PSF guess from the user and then iterates through different filters and different PSF shapes and sizes plotting the sharpness metrics and asking for user input once in a while to know whether the program should continue iteration or stop if the user is satisfied with the sharpness. This code was designed as a preprocess tool to image data analysis as often times type of image noise and blur is consistent with the set of images procured from a common image capturing mechanism and this code can determine the optimum filter and PSF shape and size that best sharpen that set of images. 
+\end{itemize}
+
+
+\newpage
