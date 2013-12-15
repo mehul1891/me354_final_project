@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  14 DEC 2013 15:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  14 DEC 2013 18:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -450,68 +450,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--9
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
-
- []
-
 <experimental_setup.png, id=14, 563.2242pt x 310.2792pt>
 File: experimental_setup.png Graphic file (type png)
 
 <use experimental_setup.png>
-Package pdftex.def Info: experimental_setup.png used on input line 23.
-(pdftex.def)             Requested size: 234.8775pt x 129.39314pt.
+Package pdftex.def Info: experimental_setup.png used on input line 12.
+(pdftex.def)             Requested size: 281.85587pt x 155.27177pt.
  [2
 
  <./experimental_setup.png>])
 (./filter_characteristics.tex
 Chapter 2.
-<mehul_pics/ssphere_motion.jpg, id=21, 642.4pt x 417.56pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+
+ []
+
+<mehul_pics/ssphere_motion.jpg, id=20, 642.4pt x 417.56pt>
 File: mehul_pics/ssphere_motion.jpg Graphic file (type jpg)
 
 <use mehul_pics/ssphere_motion.jpg>
-Package pdftex.def Info: mehul_pics/ssphere_motion.jpg used on input line 20.
+Package pdftex.def Info: mehul_pics/ssphere_motion.jpg used on input line 32.
 (pdftex.def)             Requested size: 187.89914pt x 122.1342pt.
 
-<mehul_pics/ssphere_wiener.jpg, id=22, 642.4pt x 417.56pt>
+<mehul_pics/ssphere_wiener.jpg, id=21, 642.4pt x 417.56pt>
 File: mehul_pics/ssphere_wiener.jpg Graphic file (type jpg)
 
 <use mehul_pics/ssphere_wiener.jpg>
-Package pdftex.def Info: mehul_pics/ssphere_wiener.jpg used on input line 26.
+Package pdftex.def Info: mehul_pics/ssphere_wiener.jpg used on input line 38.
 (pdftex.def)             Requested size: 187.89914pt x 122.1342pt.
 
-<mehul_pics/kernel_motion.jpg, id=23, 924.45375pt x 593.21625pt>
+<mehul_pics/kernel_motion.jpg, id=22, 924.45375pt x 593.21625pt>
 File: mehul_pics/kernel_motion.jpg Graphic file (type jpg)
 
 <use mehul_pics/kernel_motion.jpg>
-Package pdftex.def Info: mehul_pics/kernel_motion.jpg used on input line 35.
+Package pdftex.def Info: mehul_pics/kernel_motion.jpg used on input line 47.
 (pdftex.def)             Requested size: 234.8775pt x 150.7205pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<mehul_pics/blur_personal.jpg, id=24, 581.17125pt x 434.62375pt>
+<mehul_pics/blur_personal.jpg, id=23, 581.17125pt x 434.62375pt>
 File: mehul_pics/blur_personal.jpg Graphic file (type jpg)
 
 <use mehul_pics/blur_personal.jpg>
-Package pdftex.def Info: mehul_pics/blur_personal.jpg used on input line 43.
+Package pdftex.def Info: mehul_pics/blur_personal.jpg used on input line 55.
 (pdftex.def)             Requested size: 187.89914pt x 140.52153pt.
 
-<mehul_pics/sharp_personal.jpg, id=25, 602.25pt x 436.63126pt>
+<mehul_pics/sharp_personal.jpg, id=24, 602.25pt x 436.63126pt>
 File: mehul_pics/sharp_personal.jpg Graphic file (type jpg)
 
 <use mehul_pics/sharp_personal.jpg>
-Package pdftex.def Info: mehul_pics/sharp_personal.jpg used on input line 49.
+Package pdftex.def Info: mehul_pics/sharp_personal.jpg used on input line 61.
 (pdftex.def)             Requested size: 187.89914pt x 136.22707pt.
  [3
 
- <./mehul_pics/ssphere_motion.jpg> <./mehul_pics/ssphere_wiener.jpg>]) (./sharp
-ness_metric.tex [4 <./mehul_pics/kernel_motion.jpg> <./mehul_pics/blur_personal
+]) (./sharpness_metric.tex [4 <./mehul_pics/ssphere_motion.jpg> <./mehul_pics/s
+sphere_wiener.jpg> <./mehul_pics/kernel_motion.jpg> <./mehul_pics/blur_personal
 .jpg> <./mehul_pics/sharp_personal.jpg>]
 Chapter 3.
 [5
@@ -528,11 +528,11 @@ Chapter 5.
 Here is how much of TeX's memory you used:
  5581 strings out of 493488
  83452 string characters out of 3141326
- 145609 words of memory out of 3000000
+ 147609 words of memory out of 3000000
  8799 multiletter control sequences out of 15000+200000
  10534 words of font info for 38 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,11n,43p,536b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,11n,43p,729b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/ams
@@ -543,7 +543,7 @@ ts/cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
 m/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 7.pfb>
-Output written on proj_report.pdf (8 pages, 426335 bytes).
+Output written on proj_report.pdf (8 pages, 427251 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
