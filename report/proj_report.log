@@ -1,21 +1,24 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.29)  15 DEC 2013 00:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  15 DEC 2013 01:18
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **proj_report.tex
-(C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.tex
+(./proj_report.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -30,24 +33,24 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count87
@@ -88,31 +91,31 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count99
@@ -120,13 +123,13 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2012/02/19 v3.2f Customizing captions (AR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
 \captionmargin=\dimen114
 \captionmargin@=\dimen115
@@ -140,7 +143,7 @@ Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
 \c@subfigure=\count101
 \c@subtable=\count102
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count103
 \float@exts=\toks20
@@ -148,18 +151,18 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks21
 \@floatcapt=\box29
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count104
@@ -174,9 +177,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen126
 \Gm@layoutvoffset=\dimen127
 \Gm@dimlist=\toks22
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-(C:\Users\David\Documents\GitHub\me354_final_project\report\mcode.sty
+)
+(./mcode.sty
 Package: `mcode' 1.2 <2005/11/17>
 Package: mcode 2005/11/17 1.2
 mcode: settings optimized for display!
@@ -186,15 +188,15 @@ Package mcode Warning: Unknown option `autolinebreaks' ! on input line 90.
 
 Package mcode Warning: Unknown option `useliterate' ! on input line 90.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count107
 \lst@gtempboxa=\box30
 \lst@token=\toks23
@@ -208,18 +210,18 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \lst@lineno=\count112
 \lst@maxwidth=\dimen131
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count113
 \lst@skipnumbers=\count114
 \lst@framebox=\box31
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
-File: listings.cfg 2013/08/26 1.5b listings configuration
+(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
-Package: listings 2013/08/26 1.5b (Carsten Heinz)
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -234,7 +236,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -300,7 +302,7 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip46
 \f@ncyO@elh=\skip47
 \f@ncyO@erh=\skip48
@@ -311,7 +313,9 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 \f@ncyO@olf=\skip53
 \f@ncyO@orf=\skip54
 )
-(C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.aux)
+(./proj_report.aux)
+\openout1 = `proj_report.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
@@ -327,12 +331,12 @@ LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 16.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 16.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen132
@@ -345,7 +349,50 @@ LaTeX Font Info:    ... okay on input line 16.
 \MPnumerator=\count119
 \makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks25
+) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
@@ -388,26 +435,24 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count121
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.toc)
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./proj_report.toc)
 \tf@toc=\write3
+\openout3 = `proj_report.toc'.
 
-[2]
-(C:\Users\David\Documents\GitHub\me354_final_project\report\introduction.tex
+ [2] (./introduction.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-<experimental_setup.png, id=13, 563.2242pt x 310.2792pt>
+<experimental_setup.png, id=14, 563.2242pt x 310.2792pt>
 File: experimental_setup.png Graphic file (type png)
 
 <use experimental_setup.png>
 Package pdftex.def Info: experimental_setup.png used on input line 12.
 (pdftex.def)             Requested size: 281.85587pt x 155.27177pt.
- [3 <C:/Users/David/Documents/GitHub/me354_final_project/report/experimental_se
-tup.png>])
-(C:\Users\David\Documents\GitHub\me354_final_project\report\filter_characterist
-ics.tex
+ [3 <./experimental_setup.png>])
+(./filter_characteristics.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--7
 
  []
@@ -417,23 +462,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
  []
 
-<mehul_pics/ssphere_wiener.jpg, id=19, 642.4pt x 417.56pt>
+<mehul_pics/ssphere_wiener.jpg, id=20, 642.4pt x 417.56pt>
 File: mehul_pics/ssphere_wiener.jpg Graphic file (type jpg)
 
 <use mehul_pics/ssphere_wiener.jpg>
 Package pdftex.def Info: mehul_pics/ssphere_wiener.jpg used on input line 32.
 (pdftex.def)             Requested size: 187.89914pt x 122.1342pt.
 
-<mehul_pics/ssphere_motion.jpg, id=20, 642.4pt x 417.56pt>
+<mehul_pics/ssphere_motion.jpg, id=21, 642.4pt x 417.56pt>
 File: mehul_pics/ssphere_motion.jpg Graphic file (type jpg)
 
 <use mehul_pics/ssphere_motion.jpg>
 Package pdftex.def Info: mehul_pics/ssphere_motion.jpg used on input line 38.
 (pdftex.def)             Requested size: 187.89914pt x 122.1342pt.
- [4 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/ssph
-ere_wiener.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/meh
-ul_pics/ssphere_motion.jpg>]
-<mehul_pics/kernel_motion.jpg, id=28, 731.73375pt x 591.20876pt>
+ [4 <./mehul_pics/ssphere_wiener.jpg> <./mehul_pics/ssphere_motion.jpg>]
+<mehul_pics/kernel_motion.jpg, id=29, 731.73375pt x 591.20876pt>
 File: mehul_pics/kernel_motion.jpg Graphic file (type jpg)
 
 <use mehul_pics/kernel_motion.jpg>
@@ -447,21 +490,21 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `fig:barrels' on page 5 undefined on input line 59.
 
-<mehul_pics/DSC_0517.jpg, id=29, 6022.5pt x 4015.0pt>
+<mehul_pics/DSC_0517.jpg, id=30, 6022.5pt x 4015.0pt>
 File: mehul_pics/DSC_0517.jpg Graphic file (type jpg)
 
 <use mehul_pics/DSC_0517.jpg>
 Package pdftex.def Info: mehul_pics/DSC_0517.jpg used on input line 65.
 (pdftex.def)             Requested size: 187.89914pt x 125.22339pt.
 
-<mehul_pics/DSC_0518.jpg, id=30, 6022.5pt x 4015.0pt>
+<mehul_pics/DSC_0518.jpg, id=31, 6022.5pt x 4015.0pt>
 File: mehul_pics/DSC_0518.jpg Graphic file (type jpg)
 
 <use mehul_pics/DSC_0518.jpg>
 Package pdftex.def Info: mehul_pics/DSC_0518.jpg used on input line 71.
 (pdftex.def)             Requested size: 187.89914pt x 125.22339pt.
 
-<mehul_pics/true_kernel.jpg, id=31, 731.73375pt x 591.20876pt>
+<mehul_pics/true_kernel.jpg, id=32, 731.73375pt x 591.20876pt>
 File: mehul_pics/true_kernel.jpg Graphic file (type jpg)
 
 <use mehul_pics/true_kernel.jpg>
@@ -471,13 +514,9 @@ Package pdftex.def Info: mehul_pics/true_kernel.jpg used on input line 81.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/kerne
-l_motion.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul
-_pics/DSC_0517.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report
-/mehul_pics/DSC_0518.jpg>])
-(C:\Users\David\Documents\GitHub\me354_final_project\report\sharpness_metric.te
-x [6 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/tru
-e_kernel.jpg>] <mehul_pics/true.jpg, id=39, 691.58376pt x 612.2875pt>
+[5 <./mehul_pics/kernel_motion.jpg> <./mehul_pics/DSC_0517.jpg> <./mehul_pics/D
+SC_0518.jpg>]) (./sharpness_metric.tex [6 <./mehul_pics/true_kernel.jpg>]
+<mehul_pics/true.jpg, id=40, 691.58376pt x 612.2875pt>
 File: mehul_pics/true.jpg Graphic file (type jpg)
 
 <use mehul_pics/true.jpg>
@@ -488,7 +527,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 \OT1/cmr/m/n/9 Grad=0.0183 ; SSI=1 ;
  []
 
-<mehul_pics/sign_D.jpg, id=40, 691.58376pt x 612.2875pt>
+<mehul_pics/sign_D.jpg, id=41, 691.58376pt x 612.2875pt>
 File: mehul_pics/sign_D.jpg Graphic file (type jpg)
 
 <use mehul_pics/sign_D.jpg>
@@ -499,7 +538,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--40
 \OT1/cmr/m/n/9 Grad=0.0145 ; SSI=1 ;
  []
 
-<mehul_pics/sign_G.jpg, id=41, 691.58376pt x 612.2875pt>
+<mehul_pics/sign_G.jpg, id=42, 691.58376pt x 612.2875pt>
 File: mehul_pics/sign_G.jpg Graphic file (type jpg)
 
 <use mehul_pics/sign_G.jpg>
@@ -510,56 +549,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
 \OT1/cmr/m/n/9 Grad=0.0108 ; SSI=0.9998 ;
  []
 
-<mehul_pics/blur_personal.jpg, id=42, 581.17125pt x 434.62375pt>
+<mehul_pics/blur_personal.jpg, id=43, 581.17125pt x 434.62375pt>
 File: mehul_pics/blur_personal.jpg Graphic file (type jpg)
 
 <use mehul_pics/blur_personal.jpg>
 Package pdftex.def Info: mehul_pics/blur_personal.jpg used on input line 62.
 (pdftex.def)             Requested size: 187.89914pt x 140.52153pt.
 
-<mehul_pics/sharp_personal_bright.jpg, id=43, 810.02625pt x 572.1375pt>
+<mehul_pics/sharp_personal_bright.jpg, id=44, 810.02625pt x 572.1375pt>
 File: mehul_pics/sharp_personal_bright.jpg Graphic file (type jpg)
 
 <use mehul_pics/sharp_personal_bright.jpg>
 Package pdftex.def Info: mehul_pics/sharp_personal_bright.jpg used on input lin
 e 68.
 (pdftex.def)             Requested size: 187.89914pt x 132.71503pt.
- [7 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/true
-.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/si
-gn_D.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pic
-s/sign_G.jpg>])
-(C:\Users\David\Documents\GitHub\me354_final_project\report\conclusion.tex
-[8 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/blur_
-personal.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul
-_pics/sharp_personal_bright.jpg>])
-(C:\Users\David\Documents\GitHub\me354_final_project\report\appendix.tex)
-[9] (C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.aux
-)
+ [7 <./mehul_pics/true.jpg> <./mehul_pics/sign_D.jpg> <./mehul_pics/sign_G.jpg>
+]) (./conclusion.tex [8 <./mehul_pics/blur_personal.jpg> <./mehul_pics/sharp_pe
+rsonal_bright.jpg>]) (./appendix.tex) [9] (./proj_report.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5257 strings out of 494045
- 78900 string characters out of 3145968
- 137693 words of memory out of 3000000
- 8481 multiletter control sequences out of 15000+200000
+ 5597 strings out of 493488
+ 84020 string characters out of 3141326
+ 147343 words of memory out of 3000000
+ 8810 multiletter control sequences out of 15000+200000
  9322 words of font info for 34 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 42i,11n,43p,730b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on proj_report.pdf (9 pages, 13491353 bytes).
+ 957 hyphenation exceptions out of 8191
+ 42i,11n,43p,729b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/tex
+live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on proj_report.pdf (9 pages, 13482148 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
