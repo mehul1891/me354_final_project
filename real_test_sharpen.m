@@ -137,9 +137,9 @@ v = I;
 
 %=========================================================================%
 
-Using our own wiener filter
+% Using our own wiener filter
 [u,G] = im_filter(I,'wiener',PSF,noise_var);
-figure, imshow(u)
+figure, imshow(u)%, title('using our wiener filter')
 
 % % Using the Wiener filter of matlab.
 % wnr2 = deconvwnr(I, PSF, estimated_nsr);
