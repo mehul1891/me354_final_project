@@ -34,7 +34,7 @@ global gaussian_sigma
 % Additive noise parameters
 add_noise           = 'yes';
 mean_n              =  0   ;
-var_n               =  1e-5 ;
+var_n               =  1e-3 ;
 
 
 %% Images that this code is trained and tested with
@@ -42,7 +42,7 @@ var_n               =  1e-5 ;
 nimages = 4;
 
 % Test image 1: peppers.png
-im1 = imread('peppers.png');
+im1 = imread('barrels.jpg');
 
 % Test image 2: lina.jpg
 % Copyright of the PlayBoy magazine. Free redistribution cautioned.
@@ -64,7 +64,7 @@ for i = 1:nimages
     else
         switch i
             case 1                
-                Im1 = mat2gray(rgb2gray(im2double(im1)));
+                Im1=im1;%Im1 = mat2gray(rgb2gray(im2double(im1)));
                 im_size1 = size(Im1);
                 lower_dimension(1) = min(im_size1);
             case 2                
@@ -228,8 +228,8 @@ for i = 1:nimages
     end
 end
 
-%% Plotting
 
+%% Plotting
 % Index read guide
 % u_221: 2nd image, disk blur, filter index
 

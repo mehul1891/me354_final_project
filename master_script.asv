@@ -34,7 +34,7 @@ global gaussian_sigma
 % Additive noise parameters
 add_noise           = 'yes';
 mean_n              =  0   ;
-var_n               =  1e-5 ;
+var_n               =  1e-3 ;
 
 
 %% Images that this code is trained and tested with
@@ -42,7 +42,7 @@ var_n               =  1e-5 ;
 nimages = 4;
 
 % Test image 1: peppers.png
-im1 = imread('peppers.png');
+im1 = imread('DSC_0517.jpg');
 
 % Test image 2: lina.jpg
 % Copyright of the PlayBoy magazine. Free redistribution cautioned.
@@ -228,7 +228,9 @@ for i = 1:nimages
     end
 end
 
+
 %% Plotting
+figure; imshow(blurred_)
 
 % Index read guide
 % u_221: 2nd image, disk blur, filter index
@@ -365,6 +367,7 @@ hold on
 [h_113] = kernel_filter_2D_projection(G_113,'-r');
 [h_114] = kernel_filter_2D_projection(G_114,'-c');
 % [h_115] = kernel_filter_2D_projection(G_115,':k');
+axis([170 180 -.005 .055])
 
 % Norm2 used to calculate the difference betweent the kernels
 % error_11(1) = norm(h_real-h_111,2);
@@ -385,8 +388,6 @@ legend('Real', ...
 
 % Automated metrics used to compare the effect of the filters
 
-filter_name = ['inverse','pseudo-inverse','wiener',...
-    'geo-mean','least-squares'];
 [grad_11(1), simind_11(1), jn_11(1)] = sharpness_metrics(u_111, Im4);
 [grad_11(2), simind_11(2), jn_11(2)] = sharpness_metrics(u_112, Im4);
 [grad_11(3), simind_11(3), jn_11(3)] = sharpness_metrics(u_113, Im4);
@@ -395,9 +396,3 @@ filter_name = ['inverse','pseudo-inverse','wiener',...
 [val_g_11,ind_g_11] = min(grad_11);
 [val_s_11,ind_s_11] = max(simind_11);
 [val_j_11,ind_j_11] = min(jn_11);
-
-disp('the filter that performs the best acording to gradient is' filter 
-
-
-
-
