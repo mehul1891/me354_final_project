@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.29)  15 DEC 2013 14:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.29)  15 DEC 2013 14:18
 entering extended mode
 **proj_report.tex
 (C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.tex
@@ -445,29 +445,7 @@ LaTeX Info: Redefining \labelcref on input line 2163.
 LaTeX Info: Redefining \labelcpageref on input line 2163.
 Package cleveref Info: `listings' support loaded on input line 2857.
 )
-(C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.aux
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 <
-     <<<<<< HEAD
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Label `fig:true_kernel' multiply defined.
-
-
-LaTeX Warning: Label `fig:train_metrics' multiply defined.
-
-
-LaTeX Warning: Label `fig:true_metrics' multiply defined.
-
-)
+(C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
@@ -482,7 +460,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 20.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 20.
@@ -564,373 +543,11 @@ LaTeX Info: Redefining \nameref on input line 20.
 
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-(C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.toc
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \contentsline
-                  {section}{\numberline {2}Filter Performance}{4}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \contentsline
-                  {section}{\numberline {2}Filter Performance}{4}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Argument of \contentsline has an extra }.
-<inserted text> 
-                \par 
-l.3 \contentsline
-                  {section}{\numberline {2}Filter Performance}{4}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \contentsline was complete.
-<to be read again> 
-                   \par 
-l.3 \contentsline
-                  {section}{\numberline {2}Filter Performance}{4}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-{
-! Paragraph ended before \HyperDestNameFilter was complete.
-<to be read again> 
-                   \par 
-l.3 \contentsline
-                  {section}{\numberline {2}Filter Performance}{4}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
-                                                  \endgroup \let #1\Hy@gtemp 
-l.3 \contentsline
-                  {section}{\numberline {2}Filter Performance}{4}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Argument of \contentsline has an extra }.
-<inserted text> 
-                \par 
-l.5 \contentsline
-                  {subsection}{\numberline {2.2}Real Image: Barn and Barrels...
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \contentsline was complete.
-<to be read again> 
-                   \par 
-l.5 \contentsline
-                  {subsection}{\numberline {2.2}Real Image: Barn and Barrels...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-{
-! Paragraph ended before \HyperDestNameFilter was complete.
-<to be read again> 
-                   \par 
-l.5 \contentsline
-                  {subsection}{\numberline {2.2}Real Image: Barn and Barrels...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
-                                                  \endgroup \let #1\Hy@gtemp 
-l.5 \contentsline
-                  {subsection}{\numberline {2.2}Real Image: Barn and Barrels...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 \contentsline
-                  {subsection}{\numberline {3.1}Train Image: Informational S...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 \contentsline
-                  {subsection}{\numberline {3.1}Train Image: Informational S...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Argument of \contentsline has an extra }.
-<inserted text> 
-                \par 
-l.7 \contentsline
-                  {subsection}{\numberline {3.1}Train Image: Informational S...
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \contentsline was complete.
-<to be read again> 
-                   \par 
-l.7 \contentsline
-                  {subsection}{\numberline {3.1}Train Image: Informational S...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-{
-! Paragraph ended before \HyperDestNameFilter was complete.
-<to be read again> 
-                   \par 
-l.7 \contentsline
-                  {subsection}{\numberline {3.1}Train Image: Informational S...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
-                                                  \endgroup \let #1\Hy@gtemp 
-l.7 \contentsline
-                  {subsection}{\numberline {3.1}Train Image: Informational S...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Argument of \contentsline has an extra }.
-<inserted text> 
-                \par 
-l.9 \contentsline
-                  {section}{\numberline {4}Conclusions}{8}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \contentsline was complete.
-<to be read again> 
-                   \par 
-l.9 \contentsline
-                  {section}{\numberline {4}Conclusions}{8}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-{
-! Paragraph ended before \HyperDestNameFilter was complete.
-<to be read again> 
-                   \par 
-l.9 \contentsline
-                  {section}{\numberline {4}Conclusions}{8}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
-                                                  \endgroup \let #1\Hy@gtemp 
-l.9 \contentsline
-                  {section}{\numberline {4}Conclusions}{8}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 \contentsline
-                   {section}{\numberline {6}Appendix}{10}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 \contentsline
-                   {section}{\numberline {6}Appendix}{10}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Argument of \contentsline has an extra }.
-<inserted text> 
-                \par 
-l.11 \contentsline
-                   {section}{\numberline {6}Appendix}{10}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \contentsline was complete.
-<to be read again> 
-                   \par 
-l.11 \contentsline
-                   {section}{\numberline {6}Appendix}{10}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-{
-! Paragraph ended before \HyperDestNameFilter was complete.
-<to be read again> 
-                   \par 
-l.11 \contentsline
-                   {section}{\numberline {6}Appendix}{10}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
-                                                  \endgroup \let #1\Hy@gtemp 
-l.11 \contentsline
-                   {section}{\numberline {6}Appendix}{10}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Argument of \contentsline has an extra }.
-<inserted text> 
-                \par 
-l.13 \contentsline
-                   {subsection}{\numberline {6.2}Matlab Codes}{10}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-! Paragraph ended before \contentsline was complete.
-<to be read again> 
-                   \par 
-l.13 \contentsline
-                   {subsection}{\numberline {6.2}Matlab Codes}{10}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Runaway argument?
-{
-! Paragraph ended before \HyperDestNameFilter was complete.
-<to be read again> 
-                   \par 
-l.13 \contentsline
-                   {subsection}{\numberline {6.2}Matlab Codes}{10}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-! Extra }, or forgotten \endgroup.
-\Hy@pstringdef ...y@gtemp {\pdf@escapestring {#2}}
-                                                  \endgroup \let #1\Hy@gtemp 
-l.13 \contentsline
-                   {subsection}{\numberline {6.2}Matlab Codes}{10}
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 ...\numberline {1}Introduction}{3}{section.1}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 ...\numberline {1}Introduction}{3}{section.1}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.toc)
 \tf@toc=\write4
- [3]
+
+[2]
 (C:\Users\David\Documents\GitHub\me354_final_project\report\introduction.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
@@ -941,7 +558,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-<experimental_setup.png, id=125, 563.2242pt x 310.2792pt>
+<experimental_setup.png, id=89, 563.2242pt x 310.2792pt>
 File: experimental_setup.png Graphic file (type png)
 
 <use experimental_setup.png>
@@ -949,16 +566,16 @@ Package pdftex.def Info: experimental_setup.png used on input line 15.
 (pdftex.def)             Requested size: 328.82707pt x 181.1504pt.
 )
 (C:\Users\David\Documents\GitHub\me354_final_project\report\filter_characterist
-ics.tex [4 <C:/Users/David/Documents/GitHub/me354_final_project/report/experime
+ics.tex [3 <C:/Users/David/Documents/GitHub/me354_final_project/report/experime
 ntal_setup.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
 
-LaTeX Warning: Reference `sec:appendix' on page 5 undefined on input line 28.
+LaTeX Warning: Reference `sec:appendix' on page 4 undefined on input line 28.
 
-<mehul_pics/kernel_motion.jpg, id=137, 731.73375pt x 591.20876pt>
+<mehul_pics/kernel_motion.jpg, id=101, 731.73375pt x 591.20876pt>
 File: mehul_pics/kernel_motion.jpg Graphic file (type jpg)
 
 <use mehul_pics/kernel_motion.jpg>
@@ -968,58 +585,34 @@ Package pdftex.def Info: mehul_pics/kernel_motion.jpg used on input line 36.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Runaway argument?
-{\@firstoffive }\fi . 
-! Paragraph ended before \Hy@setref@link was complete.
-<to be read again> 
-                   \par 
-l.46 
-     
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-<mehul_pics/DSC_0517.jpg, id=139, 6022.5pt x 4015.0pt>
+<mehul_pics/DSC_0517.jpg, id=104, 6022.5pt x 4015.0pt>
 File: mehul_pics/DSC_0517.jpg Graphic file (type jpg)
 
 <use mehul_pics/DSC_0517.jpg>
 Package pdftex.def Info: mehul_pics/DSC_0517.jpg used on input line 51.
 (pdftex.def)             Requested size: 150.32504pt x 100.16646pt.
 
-<mehul_pics/DSC_0518.jpg, id=140, 6022.5pt x 4015.0pt>
+<mehul_pics/DSC_0518.jpg, id=105, 6022.5pt x 4015.0pt>
 File: mehul_pics/DSC_0518.jpg Graphic file (type jpg)
 
 <use mehul_pics/DSC_0518.jpg>
 Package pdftex.def Info: mehul_pics/DSC_0518.jpg used on input line 58.
 (pdftex.def)             Requested size: 150.32504pt x 100.16646pt.
- [5]
-<mehul_pics/true_kernel.jpg, id=156, 731.73375pt x 591.20876pt>
+ [4]
+<mehul_pics/true_kernel.jpg, id=122, 731.73375pt x 591.20876pt>
 File: mehul_pics/true_kernel.jpg Graphic file (type jpg)
 
 <use mehul_pics/true_kernel.jpg>
 Package pdftex.def Info: mehul_pics/true_kernel.jpg used on input line 69.
 (pdftex.def)             Requested size: 187.89914pt x 151.81621pt.
 )
-Runaway argument?
-{\@firstoffive }\fi , the approximations for the kernel are not very \ETC.
-! File ended while scanning use of \Hy@setref@link.
-<inserted text> 
-                \par 
-l.35 \input{filter_characteristics}
-                                   
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
-
 (C:\Users\David\Documents\GitHub\me354_final_project\report\sharpness_metric.te
-x [6 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/ker
+x [5 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/ker
 nel_motion.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/meh
 ul_pics/DSC_0517.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/repo
 rt/mehul_pics/DSC_0518.jpg> <C:/Users/David/Documents/GitHub/me354_final_projec
 t/report/mehul_pics/true_kernel.jpg>]
-<mehul_pics/true.jpg, id=166, 691.58376pt x 612.2875pt>
+<mehul_pics/true.jpg, id=133, 691.58376pt x 612.2875pt>
 File: mehul_pics/true.jpg Graphic file (type jpg)
 
 <use mehul_pics/true.jpg>
@@ -1030,7 +623,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--35
 \OT1/cmr/m/n/9 Grad=0.0183 ; SSI=1 ;
  []
 
-<mehul_pics/sign_D.jpg, id=167, 691.58376pt x 612.2875pt>
+<mehul_pics/sign_D.jpg, id=134, 691.58376pt x 612.2875pt>
 File: mehul_pics/sign_D.jpg Graphic file (type jpg)
 
 <use mehul_pics/sign_D.jpg>
@@ -1041,7 +634,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--41
 \OT1/cmr/m/n/9 Grad=0.0145 ; SSI=1 ;
  []
 
-<mehul_pics/sign_G.jpg, id=168, 691.58376pt x 612.2875pt>
+<mehul_pics/sign_G.jpg, id=135, 691.58376pt x 612.2875pt>
 File: mehul_pics/sign_G.jpg Graphic file (type jpg)
 
 <use mehul_pics/sign_G.jpg>
@@ -1052,31 +645,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--47
 \OT1/cmr/m/n/9 Grad=0.0108 ; SSI=0.9998 ;
  []
 
-[7 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/true.
+[6 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/true.
 jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/sig
 n_D.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics
 /sign_G.jpg>]
-<mehul_pics/blur_personal.jpg, id=180, 581.17125pt x 434.62375pt>
+<mehul_pics/blur_personal.jpg, id=147, 581.17125pt x 434.62375pt>
 File: mehul_pics/blur_personal.jpg Graphic file (type jpg)
 
 <use mehul_pics/blur_personal.jpg>
 Package pdftex.def Info: mehul_pics/blur_personal.jpg used on input line 62.
 (pdftex.def)             Requested size: 187.89914pt x 140.52153pt.
 
-<mehul_pics/sharp_personal_bright.jpg, id=181, 810.02625pt x 572.1375pt>
+<mehul_pics/sharp_personal_bright.jpg, id=148, 810.02625pt x 572.1375pt>
 File: mehul_pics/sharp_personal_bright.jpg Graphic file (type jpg)
 
 <use mehul_pics/sharp_personal_bright.jpg>
 Package pdftex.def Info: mehul_pics/sharp_personal_bright.jpg used on input lin
 e 68.
 (pdftex.def)             Requested size: 187.89914pt x 132.71503pt.
- [8 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/blur
+ [7 <C:/Users/David/Documents/GitHub/me354_final_project/report/mehul_pics/blur
 _personal.jpg> <C:/Users/David/Documents/GitHub/me354_final_project/report/mehu
 l_pics/sharp_personal_bright.jpg>])
 (C:\Users\David\Documents\GitHub\me354_final_project\report\conclusion.tex
-[9])
+[8])
 (C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.bbl)
-[10] (C:\Users\David\Documents\GitHub\me354_final_project\report\appendix.tex
+[9] (C:\Users\David\Documents\GitHub\me354_final_project\report\appendix.tex
 (C:\Users\David\Documents\GitHub\me354_final_project\report\filter_math.tex)
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 10.
 
@@ -1088,7 +681,7 @@ LaTeX Font Info:    Try loading font information for TS1+pcr on input line 35.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [11]
+) [10]
 LaTeX Font Info:    Try loading font information for OML+pcr on input line 61.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlpcr.fd"
@@ -1096,8 +689,8 @@ File: omlpcr.fd
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 61.
- [12] [13]
-[14] [15]
+ [11] [12]
+[13] [14]
 LaTeX Font Info:    Try loading font information for OMS+pcr on input line 377.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
@@ -1106,80 +699,51 @@ File: omspcr.fd
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 377.
 )
-[16])
+[15])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
- [17]
+ [16]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
 
 (C:\Users\David\Documents\GitHub\me354_final_project\report\proj_report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 46.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 46.
+Package rerunfilecheck Info: File `proj_report.out' has not changed.
+(rerunfilecheck)             Checksum: EACFE20717B29155A2BA392976F5276B;881.
 
-
-Package rerunfilecheck Warning: File `proj_report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proj_report.out':
-(rerunfilecheck)             Before: 24CD4B0EFC696E7D569C77D55FE2A158;1222
-(rerunfilecheck)             After:  EACFE20717B29155A2BA392976F5276B;881.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
- )
-(\end occurred when \ifx on line 74 was incomplete)
-(\end occurred when \ifx on line 45 was incomplete) 
+ ) 
 Here is how much of TeX's memory you used:
- 11128 strings out of 494045
- 178540 string characters out of 3145968
+ 11117 strings out of 494045
+ 178373 string characters out of 3145968
  400489 words of memory out of 3000000
- 13817 multiletter control sequences out of 15000+200000
+ 13813 multiletter control sequences out of 15000+200000
  11337 words of font info for 41 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  42i,12n,43p,908b,2384s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{
-=} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{\\par\040} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.3.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.3.1.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.3.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.3.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users\D
-avid\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/urw/courier/ucrr8a.pfb>
-Output written on proj_report.pdf (17 pages, 13592262 bytes).
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\Users
+\David\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/urw/courier/ucrr8a.pfb>
+Output written on proj_report.pdf (16 pages, 13587679 bytes).
 PDF statistics:
- 780 PDF objects out of 1000 (max. 8388607)
- 457 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 450 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
