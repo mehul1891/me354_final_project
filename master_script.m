@@ -10,19 +10,6 @@
 % Objective              : Image retrieval, sharpness metric, test metric
 % Contact information    : deman@stanford.edu & moswal@stanford.edu
 %=========================================================================%
-
-%=========================================================================%
-% INPUT OPTIONS
-% 
-%                      
-%
-% 
-%                        
-%
-% 
-% 
-%=========================================================================%
-
 %% Clear previous cache
 clear all; close all; clc;
 
@@ -41,17 +28,17 @@ var_n               =  1e-5 ;
 
 nimages = 4;
 
-% Test image 1: peppers.png
+% Train image 1: peppers.png
 im1 = imread('peppers.png');
 
-% Test image 2: lina.jpg
+% Train image 2: lina.jpg
 % Copyright of the PlayBoy magazine. Free redistribution cautioned.
 im2 = imread('lena.tiff'); 
 
-% Test image 3: cameraman.tif
+% Train image 3: cameraman.tif
 im3 = imread('cameraman.tif');
 
-% Test image 4: ssphere.jpg
+% Train image 4: ssphere.jpg
 im4 = imread('ssphere.jpg');
 
 %% Make the images gray scale (reduces computational workload and within
@@ -85,7 +72,7 @@ for i = 1:nimages
         end
     end
 end
-%% Size of the PSF as a percentage of the lower dimension
+%% Size of the PSF used to blur as a percentage of the lower dimension
 PSF_factor = 0.01; % 4% of the lower dimension
 for i = 1:nimages
     PSF_size(i) = ceil(PSF_factor*lower_dimension(i));
@@ -103,6 +90,10 @@ gauss_size_factor    = 2;
 gaussian_sigma       = 5;
 disk_size_factor     = 1;
 motion_size_factor   = 5;
+
+% This piece of code takes in the grayscale image and user specified blur
+% PSF size and noise to generate a blurred image. This is only for filter
+% training purposes.
 
 for i = 1:nimages
     if nimages > 4
@@ -240,100 +231,7 @@ end
     % 4: geo_mean
     % 5: least_squares
     % 6: ED+filt
-
-% % For Peppers 
-%     % Gaussian
-% v               = blurred_22;
-% PSF_type        = 'disk';
-% PSF_dim         = PSF_size(2);
-% factor          = 'global';
-% psf             = PSF_gen(PSF_type,PSF_dim,factor);
-% 
-% filter_type     = 'inverse';
-% [u_111,G_111]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'pseudo_inverse';
-% [u_112,G_112]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'wiener';
-% [u_113,G_113]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'geo_mean';
-% [u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'least_squares';
-% [u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
-
-% figure, imshow(real(u_112))
-%title(['Peppers blurred by ', PSF_type ' image recovered using ',filter_type])
-
-% Plots the 2D projection of the kernel
-
-% figure
-% [h_real] = real_kernel_2D_projection(real(Im2),v,'-b');
-% hold on
-% [h_111] = kernel_filter_2D_projection(G_111,'-r');
-% [h_112] = kernel_filter_2D_projection(G_112,'-g');
-% [h_113] = kernel_filter_2D_projection(G_113,'-y');
-% [h_114] = kernel_filter_2D_projection(G_114,'-c');
-% [h_115] = kernel_filter_2D_projection(G_115,':k');
-% 
-% error_11(1) = norm(h_real-h_111,2);
-% error_11(2) = norm(h_real-h_112,2);
-% error_11(3) = norm(h_real-h_113,2);
-% error_11(4) = norm(h_real-h_114,2);
-% error_11(5) = norm(h_real-h_115,2);
-% 
-% title(['Optical kernel for Peppers'])
-% xlabel('pixels')
-% ylabel('Magnitude')
-% legend('Real', ['inverse filter ' num2str(error_11(1))],...
-%     ['pseudo-inverse filter ' num2str(error_11(2))],...
-%     ['wiener filter ' num2str(error_11(3))],...
-%     ['geo-mean filter ', num2str(error_11(4))],...
-%     ['least-squares filter ' num2str(error_11(5))]);
-
-
-% Relevant plots
-% For Lena 
-    % disk
-% v               = blurred_22;
-% PSF_type        = 'disk';
-% PSF_dim         = PSF_size(2);
-% factor          = 'global';
-% psf             = PSF_gen(PSF_type,PSF_dim,factor);
-% 
-% filter_type     = 'inverse';
-% [u_111,G_111]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'pseudo_inverse';
-% [u_112,G_112]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'wiener';
-% [u_113,G_113]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'geo_mean';
-% [u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
-% filter_type     = 'least_squares';
-% [u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
-% 
-% figure
-% [h_real] = real_kernel_2D_projection(real(Im2),v,':b');
-% hold on
-% % [h_111] = kernel_filter_2D_projection(G_111,'-r');
-% [h_112] = kernel_filter_2D_projection(G_112,'-k');
-% [h_113] = kernel_filter_2D_projection(G_113,'-r');
-% [h_114] = kernel_filter_2D_projection(G_114,'-c');
-% % [h_115] = kernel_filter_2D_projection(G_115,':k');
-% 
-% % error_11(1) = norm(h_real-h_111,2);
-% error_11(2) = norm(h_real-h_112,2);
-% error_11(3) = norm(h_real-h_113,2);
-% error_11(4) = norm(h_real-h_114,2);
-% % error_11(5) = norm(h_real-h_115,2);
-% 
-% title(['Optical kernel for Lena'])
-% xlabel('pixels')
-% ylabel('Magnitude')
-% legend('Real', ...
-%     ['pseudo-inverse filter ' num2str(error_11(2))],...
-%     ['wiener filter ' num2str(error_11(3))],...
-%     ['geo-mean filter ', num2str(error_11(4))]);%,...
-% %     ['least-squares filter ' num2str(error_11(5))]);
-
+    
 %===== Filter comparison for a balistic sphere with motion blurr ========%
 % PSF charactristics for the initial guess
 v               = blurred_43;
@@ -360,19 +258,19 @@ disp(mssim)
 figure
 [h_real] = real_kernel_2D_projection(real(Im4),v,':b');
 hold on
-% [h_111] = kernel_filter_2D_projection(G_111,'-r');
+[h_111] = kernel_filter_2D_projection(G_111,'-r');
 [h_112] = kernel_filter_2D_projection(G_112,'-k');
 [h_113] = kernel_filter_2D_projection(G_113,'-r');
 [h_114] = kernel_filter_2D_projection(G_114,'-c');
-% [h_115] = kernel_filter_2D_projection(G_115,':k');
+[h_115] = kernel_filter_2D_projection(G_115,':k');
 axis([170 180 -.005 .055])
 
 % Norm2 used to calculate the difference betweent the kernels
-% error_11(1) = norm(h_real-h_111,2);
+error_11(1) = norm(h_real-h_111,2);
 error_11(2) = norm(h_real-h_112,2);
 error_11(3) = norm(h_real-h_113,2);
 error_11(4) = norm(h_real-h_114,2);
-% error_11(5) = norm(h_real-h_115,2);
+error_11(5) = norm(h_real-h_115,2);
 
 % Title | axis | legend
 title(['Optical kernel for supersonic flow around a sphere'])
@@ -381,8 +279,8 @@ ylabel('Magnitude')
 legend('Real', ...
     'pseudo-inverse filter ' ,...
     'wiener filter ' ,...
-    'geo-mean filter ');%,...
-%     ['least-squares filter ' num2str(error_11(5))]);
+    'geo-mean filter ',...
+    'least-squares filter ');
 
 % Automated metrics used to compare the effect of the filters
 
