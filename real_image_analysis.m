@@ -22,8 +22,8 @@ clear all; close all; clc;
 global gauss_size_factor disk_size_factor motion_size_factor
 global gaussian_sigma
 
-gauss_size_factor    = 2;
-gaussian_sigma       = 10;
+gauss_size_factor    = 1;
+gaussian_sigma       = 1;
 disk_size_factor     = 1;
 motion_size_factor   = 1;
 
@@ -57,10 +57,10 @@ u55 = u55./max(max(u55));
 
 % PSF charactristics for the filters initial guess
 PSF_type        = 'disk';
-PSF_dim         = 20;
+PSF_dim         = 5;
 factor          = 'global';
 psf             = PSF_gen(PSF_type,PSF_dim,factor);
-var_n           = 10^(-3);
+var_n           = 10^(-3.5);
 
 % Filtering process
 

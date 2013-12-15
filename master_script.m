@@ -34,7 +34,7 @@ global gaussian_sigma
 % Additive noise parameters
 add_noise           = 'yes';
 mean_n              =  0   ;
-var_n               =  1e-3 ;
+var_n               =  1e-5 ;
 
 
 %% Images that this code is trained and tested with
