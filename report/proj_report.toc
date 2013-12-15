@@ -6,11 +6,12 @@
 \contentsline {subsection}{\numberline {3.1}Metric Type}{6}
 \contentsline {subsubsection}{\numberline {3.1.1}Gradient Index}{6}
 \contentsline {subsubsection}{\numberline {3.1.2}Structural Similarity Index (SSI)}{6}
-\contentsline {subsubsection}{\numberline {3.1.3}Just Noticeable Blur (JNB)}{7}
+\contentsline {subsubsection}{\numberline {3.1.3}Just Noticeable Blur (JNB)\nobreakspace {}\cite {Ferzli:2009}}{7}
 \contentsline {subsection}{\numberline {3.2}Train Image: Informational Sign}{7}
 \contentsline {subsection}{\numberline {3.3}True Image: Mehul}{7}
 \contentsline {section}{\numberline {4}Conclusions}{8}
-\contentsline {section}{\numberline {5}Additional Results}{9}
-\contentsline {section}{\numberline {6}Matlab Codes}{9}
-\contentsline {subsection}{\numberline {6.1}Master script}{9}
-\contentsline {section}{\numberline {7}References}{9}
+\contentsline {section}{\numberline {5}References}{9}
+\contentsline {section}{\numberline {6}Appendix}{10}
+\contentsline {subsection}{\numberline {6.1}Additional Results}{10}
+\contentsline {subsection}{\numberline {6.2}Matlab Codes}{10}
+\contentsline {subsubsection}{\numberline {6.2.1}Master script}{10}
