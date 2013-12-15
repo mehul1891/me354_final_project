@@ -13,6 +13,6 @@
 \contentsline {section}{\numberline {4}Conclusions}{8}{section.4}
 \contentsline {section}{\numberline {5}References}{9}{section.5}
 \contentsline {section}{\numberline {6}Appendix}{10}{section.6}
-\contentsline {subsection}{\numberline {6.1}Additional Results}{10}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.1}Filter Mathematical Theory}{10}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Matlab Codes}{10}{subsection.6.2}
 \contentsline {subsubsection}{\numberline {6.2.1}Master script}{10}{subsubsection.6.2.1}
