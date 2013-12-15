@@ -76,16 +76,16 @@ filter_type     = 'inverse';
 figure, imshow(real(u_111)), title(['Image restored using ',filter_type]);
 filter_type     = 'pseudo_inverse';
 [u_112,G_112]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_111)), title(['Image restored using ',filter_type]);
+figure, imshow(real(u_112)), title(['Image restored using ',filter_type]);
 filter_type     = 'wiener';
 [u_113,G_113]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_111)), title(['Image restored using ',filter_type]);
+figure, imshow(real(u_113)), title(['Image restored using ',filter_type]);
 filter_type     = 'geo_mean';
 [u_114,G_114]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_111)), title(['Image restored using ',filter_type]);
+figure, imshow(real(u_114)), title(['Image restored using ',filter_type]);
 filter_type     = 'least_squares';
 [u_115,G_115]   = im_filter(v,filter_type,psf,var_n);
-figure, imshow(real(u_111)), title(['Image restored using ',filter_type]);
+figure, imshow(real(u_115)), title(['Image restored using ',filter_type]);
 % 
 % figure, imshow(real(u_113))
 % title('Noisy blurred image recovered using wiener')
