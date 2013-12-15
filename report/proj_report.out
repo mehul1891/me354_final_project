@@ -4,15 +4,11 @@
 \BOOKMARK [2][-]{subsection.2.2}{Train Image: Supersonic flow around a sphere}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Real Image: Barn and Barrels}{section.2}% 5
 \BOOKMARK [1][-]{section.3}{Sharpness Metric}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Metric Type}{section.3}% 7
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Gradient Index}{subsection.3.1}% 8
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Structural Similarity Index \(SSI\)}{subsection.3.1}% 9
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Just Noticeable Blur \(JNB\) Ferzli:2009}{subsection.3.1}% 10
-\BOOKMARK [2][-]{subsection.3.2}{Train Image: Informational Sign}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.3}{True Image: Mehul}{section.3}% 12
-\BOOKMARK [1][-]{section.4}{Conclusions}{}% 13
-\BOOKMARK [1][-]{section.5}{References}{}% 14
-\BOOKMARK [1][-]{section.6}{Appendix}{}% 15
-\BOOKMARK [2][-]{subsection.6.1}{Filter Mathematical Theory}{section.6}% 16
-\BOOKMARK [2][-]{subsection.6.2}{Matlab Codes}{section.6}% 17
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Master script}{subsection.6.2}% 18
+\BOOKMARK [2][-]{subsection.3.1}{Train Image: Informational Sign}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{True Image}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Conclusions}{}% 9
+\BOOKMARK [1][-]{section.5}{References}{}% 10
+\BOOKMARK [1][-]{section.6}{Appendix}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Filter Mathematical Theory}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{Matlab Codes}{section.6}% 13
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Master script}{subsection.6.2}% 14
