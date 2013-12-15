@@ -82,5 +82,5 @@ To test this approach with real blurred images, two images of the same source ha
                 \caption{All previously mentioned filters have been used to attempt to approximate the true optical kernel. The blur PSF used as the initial condition for the filtering process is "disk". Variance of the additive noise is of $O(10^{-3.5})$ }
                 \label{fig:true_kernel}
 \end{figure}
-  
+\newpage  
 As can be seen in Figure~\ref{fig:true_kernel}, the approximations for the kernel are not very good, and without knowing the true cause of the blur, it is very challenging and time consuming to find a filter that will be able to sharpen the image. Due to the presence of undetermined noise, we can't just use a simple norm to determine the effectiveness of a filter type anymore. To be able to deal with real blurred images sharpness metrics are required.

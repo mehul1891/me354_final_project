@@ -20,7 +20,8 @@
 %
 % OUTPUT OPTIONS
 % gradient = A gradient based metric that quantifies the level of
-% burriness. The smaller the value the sharper the image is.
+% burriness. The larger the value the sharper the image is. Noise makes it
+% miss the prediction.
 %
 % simind   = A metric for the structural similarity index. The higher the
 % value the sharper the image is. Comparing two of the same images give you 
