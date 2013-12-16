@@ -50,7 +50,7 @@ To better understand the functionality of the sharpness metrics, the image of an
 \subsection{Real Image: Blurry Friends}
 A rudimentary algorithm was designed and  implemented to automate image sharpening with minimum user input. The code, as it is in the current state, requires an initial PSF guess from the user before it  iterates through different filters and different PSFs with the flexibility of using multiple PSFs together, calculating the sharpness metrics, and asking for user input to know whether the program should continue looking for a sharper solution or stop if the user is satisfied with the sharpness level. \\
 
-\noindent This code was designed as a preprocessing tool for image data analysis because often times the type of image noise and blur present is consistent with the set of images procured from a common image capturing mechanism. By determining the optimum filter, PSF shape/s, and size that best sharpen an image, this code will help determine the optimum filter and characteristics for the complete data set. Figure~\ref{fig:friends} is an example of the analysis done in a real blurry image.
+\noindent This code was designed as a preprocessing tool for image data analysis because often times the type of image noise and blur present is consistent with the set of images procured from a common image capturing mechanism. By determining the optimum filter, PSF shape/s, and size that best sharpen an image, this code will help determine the optimum filter and characteristics for the complete data set. Figure~\ref{fig:true_metrics} is an example of the analysis done in a real blurry image.
 
 \begin{figure}[H]
         \centering
@@ -65,8 +65,7 @@ A rudimentary algorithm was designed and  implemented to automate image sharpeni
                  \caption{Image sharpened by the Wiener filter.}
                  \label{fig:friends}
                        
-        \end{subfigure}
-              
+        \end{subfigure}             
         \caption{ No reference Image sharpened using sharpness metrics and automated iterative sharpening code. The initial guess for the underlying PSF was a disk with radius 8 pixels. Sharpening was stopped when the plotted metrics showed an increase in criteria indicating optimum PSF shape and size had been reached. The filter that worked best is Wiener filter and the final image was enhanced by iteratively evaluating the underlying PSF to be a combination of disk and Gaussian. Luminance in the sharpened image is low due to high magnitude of noise in the original image.} \label{fig:true_metrics}
 \end{figure}
 
