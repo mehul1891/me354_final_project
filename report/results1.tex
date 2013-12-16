@@ -1,7 +1,7 @@
 \graphicspath{{mehul_pics/}}% Set graphics path location
 
 \subsection{Additional Results}
-\subsubsection{Train Picture: Memorial Church}
+\subsubsection{Train Results: Memorial Church}
 
 \begin{figure}[H]
         \centering
@@ -92,5 +92,3 @@
 
 As can be seen from Figure~\ref{filtered_images_nonoise} the filters are able to do a very good job when a good approximation of the PSF is given and there is no noise to interfere with their job. The sharpness metrics were able to perform a good job and the results obtained using them match the visual evidence at the extremes, but are ambiguous otherwise.
 The results are very different when noise is introduced into the system, as can be seen from Figure~\ref{fig:base_images_noise}. Even though the PSF and the variance of the noise where known, all the filters had a really hard time sharpening the image, and the one that worked the best is the Wiener filter. This is a common trend that was seen through all the studied cases. In addition, the sharpening metrics are not able to accurately predict sharpness level even at this level of noise, which is minimal compared to real images.
-
-\newpage

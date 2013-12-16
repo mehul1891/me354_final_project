@@ -1,5 +1,8 @@
 \graphicspath{{mehul_pics/}}% Set graphics path location
 
+%\subsection{Additional Test Image Results}
+\subsubsection{Test Image Results: Blurry Friends}
+
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -38,4 +41,5 @@ Restored Image sharpness order,
 \begin{equation*}
 Wiener > Geometric~Mean > Constrained~Least~Squares > Pseudo~Inverse~Filter > Inverse Filter
 \end{equation*}
+\noindent Geometric Mean filter does the best (after Wiener) among these filters in recovering a sharp image. The magnitude of inherent noise in the test image corrupts images retrieved when using Inverse and Pseudo Inverse filters.
 \newpage
