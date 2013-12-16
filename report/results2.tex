@@ -1,4 +1,41 @@
-\graphicspath{{fmehul_pics/}}% Set graphics path location
+\graphicspath{{mehul_pics/}}% Set graphics path location
 
-\subsection{Additional Results: Blurry Friends}
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{inverse.jpg}
+                \caption{Using Inverse Filter.}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\textwidth}
+                 \centering
+                 \includegraphics[width=\textwidth]{pseudo_inverse.jpg}
+                 \caption{Using Pseudo Inverse Filter.}
+                 \label{fig:friends}
+                       
+        \end{subfigure}             
+        \caption{Real blurry image sharpening using Inverse and Pseudo Inverse filters} 
+\end{figure}
 
+\begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{geo_mean.jpg}
+                \caption{Using Geometric Mean Filter.}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\textwidth}
+                 \centering
+                 \includegraphics[width=\textwidth]{least_squares.jpg}
+                 \caption{Using Least squares Filter.}
+                 \label{fig:friends}
+                       
+        \end{subfigure}             
+        \caption{Real blurry image sharpening using Geometric mean and least squares filters}
+\end{figure}
+
+Restored Image sharpness order,
+\begin{equation*}
+Wiener > Geometric~Mean > Constrained~Least~Squares > Pseudo~Inverse~Filter > Inverse Filter
+\end{equation*}
+\newpage
