@@ -22,23 +22,23 @@ The Just Noticeable Blur method uses the idea that as an image gets blurry, the 
 \subsection{Train Image: Informational Sign}
 To validate the implementation and better understand the functionality of the sharpness metrics, the image of an informational sign was taken and blurred. The results at three levels of blur are show in Figure~\ref{fig:train_metrics}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
         \centering
-        \begin{subfigure}[b]{0.35\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{true.jpg}
                 \caption{Sharp Image..\newline $Grad=0.0183$ ; $SSI=1.000$ ;\newline $JNB=8.4419$}
                
         \end{subfigure}
         \hspace{.6cm}
-        \begin{subfigure}[b]{0.35\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                  \centering
                  \includegraphics[width=\textwidth]{sign_D.jpg}
                  \caption{Image blurred by a disk.\newline $Grad=0.0145$ ; $SSI=1.000$ ;\newline $JNB=5.6732$}
                        
         \end{subfigure}
         \hspace{.6cm}
-        \begin{subfigure}[b]{0.35\textwidth}
+        \begin{subfigure}[b]{0.3\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{sign_G.jpg}
                 \caption{Image blurred by a Gaussian.\newline $Grad=0.0108$ ; $SSI=0.9998$ ;\newline $JNB=2.8083$} 
