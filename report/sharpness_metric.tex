@@ -69,4 +69,6 @@ A rudimentary algorithm was designed and  implemented to automate image sharpeni
         \caption{ No reference image sharpened using sharpness metrics and the automated iterative sharpening code. The initial guess for the underlying PSF was a disk with radius 8 pixels. Sharpening was stopped when the plotted metrics showed an increase in criteria indicating that the optimum PSF shape and size had been reached. The filter that worked best is the Wiener filter, and the final image was enhanced by iteratively evaluating the underlying PSF to be a combination of disk and Gaussian. Luminance in the sharpened image is low due to high magnitude of noise in the original image.} \label{fig:true_metrics}
 \end{figure}
 
+Images retrieved using other filters for this test image are presented in the Appendix. Geometric Mean filter does a decent job in recovering a sharp image but the magnitude of inherent noise in the test image is detrimental when using Inverse and Pseudo Inverse filters.
+
 \newpage
