@@ -24,24 +24,24 @@ To validate the implementation and better understand the functionality of the sh
 
 \begin{figure}[h!]
         \centering
-        \begin{subfigure}[b]{0.3\textwidth}
+        \begin{subfigure}[b]{0.35\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{true.jpg}
                 \caption{Sharp Image.}
                
         \end{subfigure}
         \hspace{.6cm}
-        \begin{subfigure}[b]{0.3\textwidth}
+        \begin{subfigure}[b]{0.35\textwidth}
                  \centering
                  \includegraphics[width=\textwidth]{sign_D.jpg}
                  \caption{Image blurred by a disk.}
                        
         \end{subfigure}
         \hspace{.6cm}
-        \begin{subfigure}[b]{0.3\textwidth}
+        \begin{subfigure}[b]{0.35\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{sign_G.jpg}
-                \caption{Image blurred by a gaussian.} 
+                \caption{Image blurred by a Gaussian.} 
         \end{subfigure} 
        
         \caption{As the blur increases in the image, the gradient value decreases, the SSI decreases and the JNB increases. The responses are independent of the blur type, and since its understood the noise levels will bias the values for some of the  coefficients, it has been ignored for this validation study.} \label{fig:train_metrics}
