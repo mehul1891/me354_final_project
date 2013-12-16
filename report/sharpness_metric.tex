@@ -27,21 +27,21 @@ To validate the implementation and better understand the functionality of the sh
         \begin{subfigure}[b]{0.35\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{true.jpg}
-                \caption{Sharp Image.}
+                \caption{Sharp Image..\newline $Grad=0.0183$ ; $SSI=1.000$ ;\newline $JNB=8.4419$}
                
         \end{subfigure}
         \hspace{.6cm}
         \begin{subfigure}[b]{0.35\textwidth}
                  \centering
                  \includegraphics[width=\textwidth]{sign_D.jpg}
-                 \caption{Image blurred by a disk.}
+                 \caption{Image blurred by a disk.\newline $Grad=0.0145$ ; $SSI=1.000$ ;\newline $JNB=5.6732$}
                        
         \end{subfigure}
         \hspace{.6cm}
         \begin{subfigure}[b]{0.35\textwidth}
                 \centering
                 \includegraphics[width=\textwidth]{sign_G.jpg}
-                \caption{Image blurred by a Gaussian.} 
+                \caption{Image blurred by a Gaussian.\newline $Grad=0.0108$ ; $SSI=0.9998$ ;\newline $JNB=2.8083$} 
         \end{subfigure} 
        
         \caption{As the blur increases in the image, the gradient value decreases, the SSI decreases and the JNB increases. The responses are independent of the blur type, and since its understood the noise levels will bias the values for some of the  coefficients, it has been ignored for this validation study.} \label{fig:train_metrics}
