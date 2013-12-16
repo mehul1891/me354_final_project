@@ -1,16 +1,16 @@
 \begin{thebibliography}{1}
 
+\bibitem{VanDyke:1982}
+Milton~Van Dyke.
+\newblock {\em An Album of Fluid Motion}.
+\newblock The Parabolic Press, 1982.
+
 \bibitem{Wang:2004}
 Zhou Wang, Alan~Conrad Bovik, Hamid~Rahim Sheikh, and Eero~P Simoncelli.
 \newblock {Image quality assessment: from error visibility to structural
   similarity.}
 \newblock {\em IEEE transactions on image processing : a publication of the
   IEEE Signal Processing Society}, 13(4):600--12, April 2004.
-
-\bibitem{VanDyke:1982}
-Milton~Van Dyke.
-\newblock {\em An Album of Fluid Motion}.
-\newblock The Parabolic Press, 1982.
 
 \bibitem{Ferzli:2009}
 Rony Ferzli and Lina~J Karam.

@@ -7,6 +7,7 @@
 \contentsline {subsection}{\numberline {3.1}Train Image: Informational Sign}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Real Image: Friends}{6}{subsection.3.2}
 \contentsline {section}{\numberline {4}Conclusions}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1} Future Work and scope }{8}{subsection.4.1}
 \contentsline {section}{\numberline {5}References}{9}{section.5}
 \contentsline {section}{\numberline {6}Appendix}{10}{section.6}
 \contentsline {subsection}{\numberline {6.1}Filter Mathematical Theory}{10}{subsection.6.1}
