@@ -5,12 +5,12 @@
 \contentsline {subsection}{\numberline {2.3}Real Image: Barn and Barrels}{4}{subsection.2.3}
 \contentsline {section}{\numberline {3}Sharpness Metric}{6}{section.3}
 \contentsline {subsection}{\numberline {3.1}Train Image: Informational Sign}{6}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Real Image: Friends}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Real Image: Friends}{7}{subsection.3.2}
 \contentsline {section}{\numberline {4}Conclusions}{8}{section.4}
 \contentsline {subsection}{\numberline {4.1} Future Work and scope }{8}{subsection.4.1}
 \contentsline {section}{\numberline {5}References}{9}{section.5}
 \contentsline {section}{\numberline {6}Appendix}{10}{section.6}
-\contentsline {subsection}{\numberline {6.1}Filter Mathematical Theory}{10}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.1}Filter Mathematical Theory\nobreakspace {}\cite {Jain:1989}}{10}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Matlab Codes}{11}{subsection.6.2}
 \contentsline {subsubsection}{\numberline {6.2.1}Master script}{11}{subsubsection.6.2.1}
 \contentsline {subsubsection}{\numberline {6.2.2}Filter and PSF generator}{15}{subsubsection.6.2.2}
