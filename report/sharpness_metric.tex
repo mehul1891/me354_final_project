@@ -2,7 +2,7 @@
 \graphicspath{{mehul_pics/}}% Set graphics path location
 
 \section{Sharpness Metric}
-Often in image sharpening, the sharpness criteria is decided by human visual systems, but this can be a hurdle if the aim is to automate the process with minimum user input and interference. There are a few of metrics that can be used to compute the sharpness of an image, but for the purpose of this analysis we are going to focus on three metrics:
+Often in image sharpening, the sharpness criteria is decided by human visual systems, but this can be a hurdle if the aim is to automate the process with minimum user input and interference. There are a few metrics that can be used to compute the sharpness of an image, but for the purpose of this analysis we are going to focus on three metrics:
 
 \begin{enumerate}
 \item {\bf Gradient Index} \\
@@ -66,7 +66,7 @@ A rudimentary algorithm was designed and  implemented to automate image sharpeni
                  \label{fig:friends}
                        
         \end{subfigure}             
-        \caption{ No reference Image sharpened using sharpness metrics and automated iterative sharpening code. The initial guess for the underlying PSF was a disk with radius 8 pixels. Sharpening was stopped when the plotted metrics showed an increase in criteria indicating optimum PSF shape and size had been reached. The filter that worked best is Wiener filter and the final image was enhanced by iteratively evaluating the underlying PSF to be a combination of disk and Gaussian. Luminance in the sharpened image is low due to high magnitude of noise in the original image.} \label{fig:true_metrics}
+        \caption{ No reference image sharpened using sharpness metrics and the automated iterative sharpening code. The initial guess for the underlying PSF was a disk with radius 8 pixels. Sharpening was stopped when the plotted metrics showed an increase in criteria indicating that the optimum PSF shape and size had been reached. The filter that worked best is the Wiener filter, and the final image was enhanced by iteratively evaluating the underlying PSF to be a combination of disk and Gaussian. Luminance in the sharpened image is low due to high magnitude of noise in the original image.} \label{fig:true_metrics}
 \end{figure}
 
 \newpage
