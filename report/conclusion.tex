@@ -5,11 +5,11 @@
 The motivation for doing this project stemmed from the need of having good image data for experimental analysis, which is often blurry and noisy. The two major objectives of this project were to study and implement various image filtering and sharpening algorithms and try to automate the sharpening process using different sharpness metrics. The following list summarizes the objectives met and our efforts.
 
 \begin{itemize}
-\item Used the mathematical tools learned in class such as Fourier transforms, convolution, de-convolutions, SNR, boundary conditions to understand the effect of optics and noise on images.\\
+\item Used the mathematical tools learned in class such as Fourier transforms, convolution, de-convolutions, SNR, boundary conditions to understand the effect of optics and noise on images.
 
-\item Study \& implement (in MatLab) the most commonly used de-blurring filters and sharpening algorithms. There are many filters that can be used to process images differing in restored image quality and implementation ease. Five (5) different filters were implemented for the purposes of this project, providing different perspectives and mathematical theory on recovering images.\\
+\item Study \& implement (in MatLab) the most commonly used de-blurring filters and sharpening algorithms. There are many filters that can be used to process images differing in restored image quality and implementation ease. Five (5) different filters were implemented for the purposes of this project, providing different perspectives and mathematical theory on recovering images.
 
-\item Quantify the effect that de-blurring filters have on the quality of images using sharpness metrics. Studied and used three independent sharpness metrics which aid in comparing sharpened images using different filters and setting a criteria for optimum filter selection for a particular set of images.\\
+\item Quantify the effect that de-blurring filters have on the quality of images using robust sharpness metrics. Studied and implemented three independent sharpness metrics which aid in comparing sharpened images using different filters and setting a criteria for optimum filter selection for images degraded by a common underlying PSF.
 
 \item Design and implement an automated image sharpening algorithm. Having studied different filters and sharpness metrics, a rudimentary algorithm was implemented to sharpen images with minimum user input. At this stage, the automated code requires the user input to choose the initial PSF and to verify the results obtained from the sharpness metrics. 
 \end{itemize}
@@ -19,10 +19,10 @@ The motivation for doing this project stemmed from the need of having good image
 \noindent This project was limited to the extent of the user having to provide many inputs to sharpen a real image. 
 While it has been shown that modeling a degradation as a convolution and added noise, and filtering using specific kernels works well in recovering sharper images, the whole process still depends upon the user being able to choose the right guesses for the PSF shape, size, and the right filter type to eventually sharpen with. This project has tried to reduce the number of educated choices that the user has to make to successfully sharpen any real image by choosing the optimum filter for the blurred image using some metrics and comparing across a limited breadth of filters implemented.
 \begin{itemize}
-\item Breadth of the filters used is limited to five in this project, but current literature has a lot more and these can be implemented to give the user a better reach and probably sharper image. \\
-\item The code can also have flexibility of correctly finding the underlying PSF by taking into account a combination of more than two PSFs. \\
-\item Images can be blurry due to distortion too and a functionality that can sharpen in such cases can be added as well.\\
-\item Implemented more robust no reference based sharpness metrics in determining relative sharpness across different images.\\
+\item Breadth of the filters used is limited to five in this project, but current literature has a lot more and these can be implemented to give the user a better reach and probably sharper image.
+\item The code can also have flexibility of correctly finding the underlying PSF by taking into account a combination of more than two PSFs. 
+\item Images can be blurry due to distortion too and a functionality that can sharpen in such cases can be added as well.
+\item Implemented more robust no reference based sharpness metrics in determining relative sharpness across different images.
 \end{itemize}
 
 
