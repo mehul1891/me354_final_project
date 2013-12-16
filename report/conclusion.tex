@@ -14,7 +14,7 @@ The motivation for doing this project stemmed from the need of having good image
 \item Design and implement an automated image sharpening algorithm. Having studied different filters and sharpness metrics, a rudimentary algorithm was implemented to sharpen images with minimum user input. At this stage, the automated code requires the user input to choose the initial PSF and to verify the results obtained from the sharpness metrics. 
 \end{itemize}
 
-\subsection{ Future Work and scope }
+\subsection{ Future Work and Scope }
 
 \noindent This project was limited to the extent of the user having to provide many inputs to sharpen a real image. 
 While it has been shown that modeling a degradation as a convolution and added noise, and filtering using specific kernels works well in recovering sharper images, the whole process still depends upon the user being able to choose the right guesses for the PSF shape, size, and the right filter type to eventually sharpen with. This project has tried to reduce the number of educated choices that the user has to make to successfully sharpen any real image by choosing the optimum filter for the blurred image using some metrics and comparing across a limited breadth of filters implemented.
