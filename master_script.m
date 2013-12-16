@@ -19,7 +19,7 @@ global gaussian_sigma
 %% User Specified inputs
 
 % Additive noise parameters
-add_noise           = 'no';
+add_noise           = 'yes';
 mean_n              =  0   ;
 var_n               =  1e-5 ;
 
@@ -277,10 +277,10 @@ title(['Optical kernel for supersonic flow around a sphere'])
 xlabel('pixels')
 ylabel('Magnitude')
 legend('Real', ...
-    'pseudo-inverse filter ' ,...
-    'wiener filter ' ,...
-    'geo-mean filter ',...
-    'least-squares filter ');
+    'pseudo-inverse ' ,...
+    'wiener ' ,...
+    'geo-mean ',...
+    'least-squares ');
 
 % Automated metrics used to compare the effect of the filters
 
