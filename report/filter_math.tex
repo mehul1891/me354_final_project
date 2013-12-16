@@ -33,17 +33,17 @@ G(\omega_1,\omega_2) = (H^-)^s\Bigl[\frac{H^*(\omega_1,\omega_2)}{|H(\omega_1,\o
 \end{equation}
 
 \item {\bf Constrained Least Squares Filter}\\
-Used MatLab's inbuilt function for this filter. Q is DFT of a predefined matrix and $\gamma$ is obtained through a solution of linear equations.
+Used MATLAB's inbuilt function for this filter. Q is DFT of a predefined matrix and $\gamma$ is obtained through a solution of linear equations.
 \begin{equation}
 G_{ls}(\omega_1,\omega_2) = \frac{H^*(\omega_1,\omega_2)}{|H(\omega_1,\omega_2)|^2 + \gamma|Q(\omega_1,\omega_2)|^2}
 \end{equation}
 
 \item {\bf Filter + edge detection}\\
-This is not really a filtering technique. We tried using one of the regular filters mentioned above and combine it with edge detection method to see if the combined image does better in sharpness metric. It wasn't successful in the first attempt and we didn't pursue it further. 
+This is not really a filtering technique. We tried using one of the regular filters mentioned above and combine it with edge detection method to see if the combined image does better in overall sharpness. It wasn't successful in the first attempt and we didn't pursue it further. 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{ED}
-\caption{Filter sharpened image + Edge detection == better sharp image ?}
+\includegraphics[scale=.6]{ED}
+\caption{Filter sharpened image + Edge detection = better sharp image ?}
 \end{figure}
 
 \end{enumerate}
