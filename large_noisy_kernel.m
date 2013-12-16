@@ -1,5 +1,5 @@
 %=========================================================================%
-% NOISY KERNEL FUNCTION    : ME354 FINAL PROJECT, AUT 2013
+% NOISY KERNEL FUNCTION  : ME354 FINAL PROJECT, AUT 2013
 %=========================================================================%
 
 %=========================================================================%
@@ -17,10 +17,7 @@
 % u                      : Sharper image                     
 %
 % v                      : Blurry image
-%                        
-%
-% 
-% 
+%                         
 %=========================================================================%
 
 function [h_line] = large_noisy_kernel(u,v)
@@ -55,15 +52,6 @@ h = (h1+h2+h3+h4+h5+h6+h7+h8+h9)/9;
 % make h the same size as the image
 % pad_dim = size(u_gray)-size(h);
 % h = padarray(h,pad_dim);
-
-
-% surf(h,'LineStyle','none')
-% %%
-% [k1,k2] = size(h);
-% 
-[k1,k2] = size(h);
+ 
+[~,k2] = size(h);
 h_line = h(:,floor(k2/2)+1);
-% figure
-% plot(h_line)
-% axis([floor(k1/2)+1-50 , floor(k1/2)+1+50 , 0 , max(h)+.05*max(h)])
-
